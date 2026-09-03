@@ -1,0 +1,10 @@
+{
+  "description": "Connect with a horse rescue charity that provides care and rehabilitation for horses, offering ways to donate, support, and learn about their stories.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
