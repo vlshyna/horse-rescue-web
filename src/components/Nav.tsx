@@ -125,8 +125,7 @@ function LogoMark() {
     <img
       src="/horse-rescue-web/public/images/logo.png"
       alt="Horse Rescue Foundation"
-      width="28"
-      height="28"
+      className="h-8 w-8 object-contain"
     />
   );
 }
