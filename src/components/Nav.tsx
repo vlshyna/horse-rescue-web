@@ -123,7 +123,7 @@ export default function Nav({ navigate, currentPage }: NavProps) {
 function LogoMark() {
   return (
     <img
-      src="/horse-rescue-web/public/images/logo.png"
+      src="/horse-rescue-web/images/logo.png"
       alt="Horse Rescue Foundation"
       className="h-8 w-8 object-contain"
     />
