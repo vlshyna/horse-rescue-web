@@ -120,30 +120,14 @@ export default function Nav({ navigate, currentPage }: NavProps) {
   );
 }
 
-function LogoMark({ inverted }: { inverted: boolean }) {
+function LogoMark() {
   return (
-    <svg
+    <img
+      src="/horse-rescue-web/public/images/logo.png"
+      alt="Horse Rescue Foundation"
       width="28"
       height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M3,20 C8,10 11,16 14,12 C17,8 20,14 25,8"
-        stroke={inverted ? '#F5F1E8' : '#6B4F3A'}
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M3,24 C8,14 11,20 14,16 C17,12 20,18 25,12"
-        stroke={inverted ? 'rgba(245,241,232,0.4)' : 'rgba(107,79,58,0.3)'}
-        strokeWidth="1"
-        strokeLinecap="round"
-        fill="none"
-      />
-    </svg>
+    />
   );
 }
 
