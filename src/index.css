@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+
+  --color-brown: #6B4F3A;
+  --color-brown-hover: #523c2c;
+  --color-brown-muted: #9B7B65;
+  --color-green: #657A52;
+  --color-green-light: #7d9468;
+  --color-sky: #9BBCC7;
+  --color-sky-light: #c2d9e2;
+  --color-cream: #F5F1E8;
+  --color-cream-dark: #EDE8DB;
+  --color-cream-deeper: #E4DDD0;
+  --color-charcoal: #292825;
+  --color-charcoal-light: #3d3b37;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F5F1E8;
+  color: #292825;
+  font-family: 'Manrope', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #6B4F3A;
+  color: #F5F1E8;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 79, 58, 0.18);
+  border-radius: 3px;
+}
