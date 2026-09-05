@@ -6,5 +6,5 @@ interface LangCtx {
   setLang: (l: Lang) => void;
 }
 
-export const LangContext = createContext<LangCtx>({ lang: 'en', setLang: () => {} });
+export const LangContext = createContext<LangCtx>({ lang: 'ua', setLang: () => {} });
 export const useLang = () => useContext(LangContext);
