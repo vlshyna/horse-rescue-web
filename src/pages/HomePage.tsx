@@ -10,10 +10,15 @@ interface HomePageProps {
 }
 
 const statusColors: Record<string, { cls: string }> = {
-  critical: { cls: 'bg-[#F5E8E8] text-[#8B2020]' },
-  recovering: { cls: 'bg-[#F5F0E0] text-[#7A5218]' },
-  stable: { cls: 'bg-[#E8EEE4] text-[#3D5230]' },
-  thriving: { cls: 'bg-[#D8E6D2] text-[#2A4A22]' },
+  'кінь фонду': {
+    cls: 'bg-[#E4ECE0] text-[#3F5A38]',
+  },
+  'приватний кінь': {
+    cls: 'bg-[#E8E3EC] text-[#5B4968]',
+  },
+  "кінь у пам'яті": {
+    cls: 'bg-[#E9E4DC] text-[#675D50]',
+  },
 };
 
 export default function HomePage({ navigate, scrollTarget }: HomePageProps) {
