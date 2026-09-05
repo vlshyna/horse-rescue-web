@@ -1,25 +1,22 @@
 import { horses } from '../data';
-import { MotifLine } from '../components/Motif';
+import { useLang } from '../LangContext';
+import { translations } from '../i18n';
 
 interface HorsePageProps {
   horseId: string;
   navigate: (page: string, id?: string, section?: string) => void;
 }
 
-const statusLabels: Record<string, { label: string; cls: string; dot: string }> = {
-  critical: { label: 'Critical care', cls: 'bg-[#F5E8E8] text-[#8B2020] border-[#E8C8C8]', dot: 'bg-[#C02020]' },
-  recovering: { label: 'Recovering', cls: 'bg-[#F5F0E0] text-[#7A5218] border-[#E8DCB8]', dot: 'bg-[#C07818]' },
-  stable: { label: 'Stable', cls: 'bg-[#E8EEE4] text-[#3D5230] border-[#C8D8BC]', dot: 'bg-[#4D6A3A]' },
-  thriving: { label: 'Thriving', cls: 'bg-[#D8E6D2] text-[#2A4A22] border-[#B8D2AC]', dot: 'bg-[#3A6030]' },
-};
-
-const genderLabels: Record<string, string> = {
-  mare: 'Mare',
-  stallion: 'Stallion',
-  gelding: 'Gelding',
+const statusLabels: Record<string, { cls: string; dot: string }> = {
+  critical: { cls: 'bg-[#F5E8E8] text-[#8B2020] border-[#E8C8C8]', dot: 'bg-[#C02020]' },
+  recovering: { cls: 'bg-[#F5F0E0] text-[#7A5218] border-[#E8DCB8]', dot: 'bg-[#C07818]' },
+  stable: { cls: 'bg-[#E8EEE4] text-[#3D5230] border-[#C8D8BC]', dot: 'bg-[#4D6A3A]' },
+  thriving: { cls: 'bg-[#D8E6D2] text-[#2A4A22] border-[#B8D2AC]', dot: 'bg-[#3A6030]' },
 };
 
 export default function HorsePage({ horseId, navigate }: HorsePageProps) {
+  const { lang } = useLang();
+  const T = translations[lang];
   const horse = horses.find((h) => h.id === horseId);
 
   if (!horse) {
@@ -28,7 +25,7 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
         <div className="text-center">
           <p className="font-serif text-3xl text-charcoal mb-3">Horse not found</p>
           <button onClick={() => navigate('home', undefined, 'horses')} className="text-brown text-sm hover:underline">
-            ← Back to all horses
+            ← {T.horsePage.allHorses}
           </button>
         </div>
       </div>
@@ -36,6 +33,8 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
   }
 
   const status = statusLabels[horse.status];
+  const statusLabel = T.status[horse.status as keyof typeof T.status];
+  const genderLabel = T.horsePage[horse.gender as 'mare' | 'stallion' | 'gelding'];
   const otherHorses = horses.filter((h) => h.id !== horse.id).slice(0, 3);
 
   return (
@@ -57,13 +56,13 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
               <path d="M13 8H3M7 4l-4 4 4 4" />
             </svg>
-            All horses
+            {T.horsePage.allHorses}
           </button>
           <div className="flex flex-wrap items-end gap-4">
             <h1 className="font-serif text-5xl md:text-7xl text-cream">{horse.name}</h1>
             <div className={`mb-2 flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-sm border ${status.cls}`}>
               <span className={`w-1.5 h-1.5 rounded-full ${status.dot}`} />
-              {status.label}
+              {statusLabel}
             </div>
           </div>
         </div>
@@ -76,24 +75,18 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
           <div className="md:col-span-2 space-y-12">
             {/* Quick bio */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-              <BioItem label="Age" value={`${horse.age} years`} />
-              <BioItem label="Breed" value={horse.breed} />
-              <BioItem label="Gender" value={genderLabels[horse.gender]} />
-              <BioItem label="With us since" value={horse.rescuedDate} />
-            </div>
-
-            <div>
-              <MotifLine className="h-8 text-brown/20 mb-8" strokeWidth={1} />
+              <BioItem label={T.horsePage.age} value={`${horse.age} ${T.horsePage.years}`} />
+              <BioItem label={T.horsePage.breed} value={horse.breed} />
+              <BioItem label={T.horsePage.gender} value={genderLabel} />
+              <BioItem label={T.horsePage.since} value={horse.rescuedDate} />
             </div>
 
             {/* Rescue story */}
             <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-5">Rescue story</h2>
+              <h2 className="font-serif text-3xl text-charcoal mb-5">{T.horsePage.rescueStory}</h2>
               <div className="space-y-4">
                 {horse.rescueStory.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-charcoal/70 leading-relaxed">
-                    {para}
-                  </p>
+                  <p key={i} className="text-charcoal/70 leading-relaxed">{para}</p>
                 ))}
               </div>
             </div>
@@ -103,12 +96,7 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
               <div className="grid grid-cols-2 gap-4">
                 {horse.additionalPhotos.map((src, i) => (
                   <div key={i} className="aspect-[4/3] bg-cream-dark rounded overflow-hidden">
-                    <img
-                      src={src}
-                      alt={`${horse.name} at Open Pastures — photo ${i + 2}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    <img src={src} alt={`${horse.name} at Free Horses — photo ${i + 2}`} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 ))}
               </div>
@@ -116,7 +104,7 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
 
             {/* Current condition */}
             <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-4">Current condition</h2>
+              <h2 className="font-serif text-3xl text-charcoal mb-4">{T.horsePage.currentCondition}</h2>
               <div className="bg-cream-dark border border-charcoal/8 rounded-sm p-6">
                 <p className="text-charcoal/70 leading-relaxed">{horse.currentCondition}</p>
               </div>
@@ -127,14 +115,14 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
           <div className="space-y-6">
             {/* Location */}
             <div className="bg-cream-dark border border-charcoal/8 rounded-sm p-5">
-              <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-2">Location</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-2">{T.horsePage.location}</p>
               <p className="text-charcoal font-medium">{horse.location}</p>
-              <p className="text-sm text-charcoal/55 mt-0.5">Open Pastures Sanctuary</p>
+              <p className="text-sm text-charcoal/55 mt-0.5">{T.horsePage.sanctuary}</p>
             </div>
 
             {/* Needs */}
             <div className="border border-charcoal/10 rounded-sm p-5 bg-cream">
-              <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-3">Current needs</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-3">{T.horsePage.currentNeeds}</p>
               <ul className="space-y-2">
                 {horse.needs.map((need) => (
                   <li key={need} className="flex items-start gap-2.5 text-sm text-charcoal/70">
@@ -147,34 +135,30 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
 
             {/* Monthly cost + CTA */}
             <div className="bg-brown text-cream rounded-sm p-6">
-              <p className="text-xs font-semibold tracking-widest uppercase text-cream/50 mb-3">Monthly care cost</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-cream/50 mb-3">{T.horsePage.monthlyCost}</p>
               <div className="font-serif text-4xl text-cream mb-1">€{horse.monthlyNeed}</div>
-              <p className="text-xs text-cream/55 mb-5">
-                Covers feed, routine veterinary care, farrier visits, and daily handling.
-              </p>
+              <p className="text-xs text-cream/55 mb-5">{T.horsePage.monthlySub}</p>
               <button
                 onClick={() => navigate('donations')}
                 className="w-full bg-cream text-brown text-sm font-semibold py-3 rounded-sm hover:bg-cream-dark transition-colors"
               >
-                Support {horse.name}
+                {T.horsePage.support} {horse.name}
               </button>
-              <p className="text-xs text-cream/40 mt-3 text-center">
-                Or any amount helps — all funds go to horse care.
-              </p>
+              <p className="text-xs text-cream/40 mt-3 text-center">{T.horsePage.anyAmount}</p>
             </div>
 
-            {/* Sponsor info */}
+            {/* Adoption */}
             {horse.status === 'thriving' && (
               <div className="border border-green/30 bg-[#E8EEE4] rounded-sm p-5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-green/60 mb-2">Adoption enquiries</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-green/60 mb-2">{T.horsePage.adoptionLabel}</p>
                 <p className="text-sm text-charcoal/65 leading-relaxed">
-                  {horse.name} may be suitable for an experienced horse owner. Get in touch to discuss.
+                  {horse.name} {T.horsePage.adoptionBody}
                 </p>
                 <button
                   onClick={() => navigate('home', undefined, 'contact')}
                   className="mt-3 text-sm font-semibold text-green hover:underline"
                 >
-                  Contact us →
+                  {T.horsePage.adoptionCta}
                 </button>
               </div>
             )}
@@ -183,10 +167,11 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
 
         {/* Other horses */}
         <div className="mt-20 md:mt-28 pt-12 border-t border-charcoal/10">
-          <h2 className="font-serif text-3xl text-charcoal mb-8">Others in our care</h2>
+          <h2 className="font-serif text-3xl text-charcoal mb-8">{T.horsePage.othersHeading}</h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {otherHorses.map((h) => {
               const s = statusLabels[h.status];
+              const sl = T.status[h.status as keyof typeof T.status];
               return (
                 <button
                   key={h.id}
@@ -194,19 +179,12 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
                   className="group text-left flex gap-4 items-center border border-charcoal/8 rounded-sm p-4 bg-cream hover:border-charcoal/20 transition-colors"
                 >
                   <div className="w-16 h-16 shrink-0 rounded-sm overflow-hidden bg-cream-dark">
-                    <img
-                      src={h.photo}
-                      alt={h.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
+                    <img src={h.photo} alt={h.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                   </div>
                   <div>
                     <p className="font-serif text-lg text-charcoal">{h.name}</p>
                     <p className="text-xs text-charcoal/45">{h.age} yrs · {h.breed}</p>
-                    <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-sm border mt-1 inline-block ${s.cls}`}>
-                      {s.label}
-                    </span>
+                    <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-sm border mt-1 inline-block ${s.cls}`}>{sl}</span>
                   </div>
                 </button>
               );
