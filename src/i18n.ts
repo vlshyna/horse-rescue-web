@@ -343,4 +343,4 @@ const ua = {
   },
 };
 
-export const translations: Record<Lang, typeof en> = { en, uk };
+export const translations: Record<Lang, typeof en> = { en, ua };
