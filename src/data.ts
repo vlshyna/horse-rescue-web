@@ -1,4 +1,4 @@
-export type HorseStatus = 'кінь фонду' | 'приватний кінь' | "кінь у пам'яті" ;
+export type HorseStatus = 'fund' | 'private' | 'memory';
 //export type HorseGender = 'mare' | 'stallion' | 'gelding';
 
 export interface Horse {
@@ -25,7 +25,7 @@ export const horses: Horse[] = [
     id: 'bojevaja',
     name: 'Бойова',
     age: '20XX-2026',
-    status: "кінь у пам'яті",
+    status: 'memory',
     photo: '/horse-rescue-web/images/bojevaja.jpg',
     heroPhoto: '/horse-rescue-web/images/bojevaja.jpg',
     //additionalPhotos: [
@@ -39,9 +39,9 @@ export const horses: Horse[] = [
     id: 'britni',
     name: 'Брітні',
     age: 'Рік народження: 2017',
-    status: 'кінь фонду',
-    photo: '/horse-rescue-web/images/britni.jpg',
-    heroPhoto: '/horse-rescue-web/images/britni.jpg',
+    status: 'fund',
+    photo: '/horse-rescue-web/images/brit.jpg',
+    heroPhoto: '/horse-rescue-web/images/brit.jpg',
     //additionalPhotos: [
       //'https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=900&h=600&fit=crop&auto=format',
       //'https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=600&fit=crop&auto=format',
@@ -53,7 +53,7 @@ export const horses: Horse[] = [
     id: 'bagira',
     name: 'Багіра',
     age: 'Рік народження: 2022',
-    status: 'кінь фонду',
+    status: 'fund',
     photo: '/horse-rescue-web/images/bagira.jpg',
     heroPhoto: '/horse-rescue-web/images/bagira.jpg',
     //additionalPhotos: [
