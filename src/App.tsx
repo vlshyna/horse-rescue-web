@@ -16,7 +16,7 @@ type Route =
 
 export default function App() {
   const [route, setRoute] = useState<Route>({ page: 'home' });
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>('ua');
 
   function navigate(page: string, id?: string, section?: string) {
     if (page !== 'home' || !section) {
