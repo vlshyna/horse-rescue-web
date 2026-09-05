@@ -67,7 +67,7 @@ export default function HomePage({
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-end bg-charcoal">
         <img
-          src="https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=1800&h=1080&fit=crop&auto=format"
+          src="/horse-rescue-web/images/bg.jpg"
           alt="A horse grazing in a golden-light meadow at dusk"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           loading="eager"
