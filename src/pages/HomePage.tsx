@@ -9,14 +9,20 @@ interface HomePageProps {
   scrollTarget?: string;
 }
 
-const statusColors: Record<string, { cls: string }> = {
-  'кінь фонду': {
+const statusLabels: Record<HorseStatus, string> = {
+  fund: 'кінь фонду',
+  private: 'приватний кінь',
+  memory: 'кінь у пам’яті',
+};
+
+const statusColors: Record<HorseStatus, { cls: string }> = {
+  fund: {
     cls: 'bg-[#E4ECE0] text-[#3F5A38]',
   },
-  'приватний кінь': {
+  private: {
     cls: 'bg-[#E8E3EC] text-[#5B4968]',
   },
-  "кінь у пам'яті": {
+  memory: {
     cls: 'bg-[#E9E4DC] text-[#675D50]',
   },
 };
