@@ -7,11 +7,22 @@ interface HorsePageProps {
   navigate: (page: string, id?: string, section?: string) => void;
 }
 
-const statusLabels: Record<string, { cls: string; dot: string }> = {
-  critical: { cls: 'bg-[#F5E8E8] text-[#8B2020] border-[#E8C8C8]', dot: 'bg-[#C02020]' },
-  recovering: { cls: 'bg-[#F5F0E0] text-[#7A5218] border-[#E8DCB8]', dot: 'bg-[#C07818]' },
-  stable: { cls: 'bg-[#E8EEE4] text-[#3D5230] border-[#C8D8BC]', dot: 'bg-[#4D6A3A]' },
-  thriving: { cls: 'bg-[#D8E6D2] text-[#2A4A22] border-[#B8D2AC]', dot: 'bg-[#3A6030]' },
+const statusLabels: Record<string, { label: string; cls: string; dot: string }> = {
+  fund: {
+    label: 'кінь фонду',
+    cls: 'bg-[#E4ECE0] text-[#3F5A38] border-[#C8D8C0]',
+    dot: 'bg-[#4D6A3A]',
+  },
+  private: {
+    label: 'приватний кінь',
+    cls: 'bg-[#E8E3EC] text-[#5B4968] border-[#D4C9DA]',
+    dot: 'bg-[#705B7D]',
+  },
+  memory: {
+    label: 'кінь у пам’яті',
+    cls: 'bg-[#E9E4DC] text-[#675D50] border-[#D8D0C5]',
+    dot: 'bg-[#766B5C]',
+  },
 };
 
 export default function HorsePage({ horseId, navigate }: HorsePageProps) {
@@ -34,7 +45,6 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
 
   const status = statusLabels[horse.status];
   const statusLabel = T.status[horse.status as keyof typeof T.status];
-  const genderLabel = T.horsePage[horse.gender as 'mare' | 'stallion' | 'gelding'];
   const otherHorses = horses.filter((h) => h.id !== horse.id).slice(0, 3);
 
   return (
@@ -74,12 +84,10 @@ export default function HorsePage({ horseId, navigate }: HorsePageProps) {
           {/* Left: main narrative */}
           <div className="md:col-span-2 space-y-12">
             {/* Quick bio */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-              <BioItem label={T.horsePage.age} value={`${horse.age} ${T.horsePage.years}`} />
-              <BioItem label={T.horsePage.breed} value={horse.breed} />
-              <BioItem label={T.horsePage.gender} value={genderLabel} />
-              <BioItem label={T.horsePage.since} value={horse.rescuedDate} />
-            </div>
+            <div className="grid grid-cols-2 gap-5">
+               <BioItem label="Роки життя" value={horse.years} />
+               <BioItem label="Статус" value={status.label} />
+             </div>
 
             {/* Rescue story */}
             <div>
