@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { LangContext } from './LangContext';
+import type { Lang } from './i18n';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -14,9 +16,12 @@ type Route =
 
 export default function App() {
   const [route, setRoute] = useState<Route>({ page: 'home' });
+  const [lang, setLang] = useState<Lang>('en');
 
   function navigate(page: string, id?: string, section?: string) {
-    window.scrollTo({ top: 0 });
+    if (page !== 'home' || !section) {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
     if (page === 'home') {
       setRoute({ page: 'home', scrollTarget: section });
     } else if (page === 'horse' && id) {
@@ -28,33 +33,28 @@ export default function App() {
     }
   }
 
-  // Reset scroll on route change (except home with section target)
-  useEffect(() => {
-    if (route.page !== 'home' || !('scrollTarget' in route && route.scrollTarget)) {
-      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-    }
-  }, [route]);
-
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
-      <Nav navigate={navigate} currentPage={route.page} />
+    <LangContext.Provider value={{ lang, setLang }}>
+      <div className="min-h-screen flex flex-col bg-cream">
+        <Nav navigate={navigate} currentPage={route.page} />
 
-      <main className="flex-1">
-        {route.page === 'home' && (
-          <HomePage navigate={navigate} scrollTarget={route.scrollTarget} />
-        )}
-        {route.page === 'horse' && (
-          <HorsePage horseId={route.id} navigate={navigate} />
-        )}
-        {route.page === 'donations' && (
-          <DonationsPage navigate={navigate} />
-        )}
-        {route.page === 'report' && (
-          <ReportPage reportId={route.id} navigate={navigate} />
-        )}
-      </main>
+        <main className="flex-1">
+          {route.page === 'home' && (
+            <HomePage navigate={navigate} scrollTarget={route.scrollTarget} />
+          )}
+          {route.page === 'horse' && (
+            <HorsePage horseId={route.id} navigate={navigate} />
+          )}
+          {route.page === 'donations' && (
+            <DonationsPage navigate={navigate} />
+          )}
+          {route.page === 'report' && (
+            <ReportPage reportId={route.id} navigate={navigate} />
+          )}
+        </main>
 
-      <Footer navigate={navigate} />
-    </div>
+        <Footer navigate={navigate} />
+      </div>
+    </LangContext.Provider>
   );
 }
