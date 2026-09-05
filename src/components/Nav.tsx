@@ -1,20 +1,24 @@
 import { useState, useEffect } from 'react';
+import { useLang } from '../LangContext';
+import { translations } from '../i18n';
 
 interface NavProps {
   navigate: (page: string, id?: string, section?: string) => void;
   currentPage: string;
 }
 
-const navLinks = [
-  { label: 'Our Horses', action: 'home', section: 'horses' },
-  { label: 'How to Help', action: 'home', section: 'help' },
-  { label: 'Donations & Reports', action: 'donations', section: undefined },
-  { label: 'Contact', action: 'home', section: 'contact' },
-];
-
 export default function Nav({ navigate, currentPage }: NavProps) {
+  const { lang, setLang } = useLang();
+  const T = translations[lang];
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: T.nav.ourHorses, action: 'home', section: 'horses' },
+    { label: T.nav.howToHelp, action: 'home', section: 'help' },
+    { label: T.nav.donations, action: 'donations', section: undefined },
+    { label: T.nav.contact, action: 'home', section: 'contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -43,17 +47,14 @@ export default function Nav({ navigate, currentPage }: NavProps) {
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
+          {/* Logo — text only */}
           <button
             onClick={() => handleLink('home')}
-            className={`flex items-center gap-2.5 group transition-opacity hover:opacity-75 ${
+            className={`font-serif text-xl leading-none transition-opacity hover:opacity-70 ${
               isTransparent ? 'text-cream' : 'text-charcoal'
             }`}
           >
-            <LogoMark inverted={isTransparent} />
-            <span className="font-serif text-lg leading-none hidden sm:block">
-              Open Pastures
-            </span>
+            Free Horses
           </button>
 
           {/* Desktop nav */}
@@ -71,17 +72,19 @@ export default function Nav({ navigate, currentPage }: NavProps) {
             ))}
           </nav>
 
-          {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-3">
+          {/* Right side: lang switcher + CTA + hamburger */}
+          <div className="flex items-center gap-2 md:gap-3">
+            <LangSwitcher isTransparent={isTransparent} />
+
             <button
               onClick={() => navigate('donations')}
-              className="hidden sm:inline-flex items-center gap-1.5 bg-brown text-cream text-sm font-semibold px-4 py-2 rounded-sm hover:bg-brown-hover transition-colors"
+              className="hidden sm:inline-flex items-center bg-brown text-cream text-sm font-semibold px-4 py-2 rounded-sm hover:bg-brown-hover transition-colors"
             >
-              Donate now
+              {T.nav.donateNow}
             </button>
 
             <button
-              className={`md:hidden p-1.5 rounded-sm transition-colors ${
+              className={`md:hidden p-1.5 rounded-sm ${
                 isTransparent ? 'text-cream' : 'text-charcoal'
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -111,7 +114,7 @@ export default function Nav({ navigate, currentPage }: NavProps) {
               onClick={() => navigate('donations')}
               className="mt-3 bg-brown text-cream text-sm font-semibold py-3 rounded-sm hover:bg-brown-hover transition-colors"
             >
-              Donate now
+              {T.nav.donateNow}
             </button>
           </nav>
         </div>
@@ -120,13 +123,28 @@ export default function Nav({ navigate, currentPage }: NavProps) {
   );
 }
 
-function LogoMark() {
+function LangSwitcher({ isTransparent }: { isTransparent: boolean }) {
+  const { lang, setLang } = useLang();
+  const base = `text-xs font-semibold px-2 py-1 rounded-sm transition-colors`;
+  const activeClass = isTransparent
+    ? 'bg-cream/20 text-cream'
+    : 'bg-brown/10 text-brown';
+  const inactiveClass = isTransparent
+    ? 'text-cream/50 hover:text-cream/80'
+    : 'text-charcoal/40 hover:text-charcoal/70';
+
   return (
-    <img
-      src="/horse-rescue-web/images/logo.png"
-      alt="Horse Rescue Foundation"
-      className="h-8 w-8 object-contain"
-    />
+    <div className="flex items-center gap-0.5 border border-current/10 rounded-sm overflow-hidden">
+      {(['en', 'uk'] as const).map((l) => (
+        <button
+          key={l}
+          onClick={() => setLang(l)}
+          className={`${base} ${lang === l ? activeClass : inactiveClass}`}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
   );
 }
 
