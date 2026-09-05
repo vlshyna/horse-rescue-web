@@ -1,6 +1,7 @@
-export type Lang = 'en' | 'uk';
+//export type Lang = 'en' | 'uk';
+export type Lang = 'ua' | 'en';
 
-const en = {
+const en: typeof ua = {
   nav: {
     ourHorses: 'Our Horses',
     howToHelp: 'How to Help',
@@ -171,7 +172,7 @@ const en = {
   },
 };
 
-const uk: typeof en = {
+const ua = {
   nav: {
     ourHorses: 'Наші коні',
     howToHelp: 'Як допомогти',
