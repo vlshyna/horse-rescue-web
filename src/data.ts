@@ -1,139 +1,70 @@
-export type HorseStatus = 'critical' | 'recovering' | 'stable' | 'thriving';
-export type HorseGender = 'mare' | 'stallion' | 'gelding';
+export type HorseStatus = 'кінь фонду' | 'приватний кінь' | "кінь у пам'яті" ;
+//export type HorseGender = 'mare' | 'stallion' | 'gelding';
 
 export interface Horse {
   id: string;
   name: string;
-  age: number;
-  breed: string;
-  gender: HorseGender;
+  age: string;
+  //breed: string;
+  //gender: HorseGender;
   status: HorseStatus;
-  rescuedDate: string;
-  location: string;
+  //rescuedDate: string;
+  //location: string;
   photo: string;
   heroPhoto: string;
-  additionalPhotos: string[];
+  //additionalPhotos: string[];
   shortBio: string;
   rescueStory: string;
-  currentCondition: string;
-  needs: string[];
-  monthlyNeed: number;
+  //currentCondition: string;
+  //needs: string[];
+  //monthlyNeed: number;
 }
 
 export const horses: Horse[] = [
-  {
-    id: 'marta',
-    name: 'Marta',
-    age: 12,
-    breed: 'Thoroughbred mix',
-    gender: 'mare',
-    status: 'thriving',
-    rescuedDate: 'March 2022',
-    location: 'South paddock',
-    photo: 'https://images.unsplash.com/photo-1519614356164-43acba9cb25d?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1519614356164-43acba9cb25d?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [
-      'https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=900&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=600&fit=crop&auto=format',
-    ],
-    shortBio: "Found malnourished and alone after her owner's bankruptcy, Marta took a year to learn to trust again. She's now our most social resident.",
-    rescueStory: "Marta was discovered in January 2022 by a local vet responding to an anonymous tip. She had been without regular food or water for at least three weeks. Her coat was dull, ribs visible, and she flinched at every human touch. The owner had declared bankruptcy and abandoned the property.\n\nOur team arrived with emergency hay and electrolytes. It took six weeks of patient, daily contact before Marta would eat from a hand. By summer, she was galloping in the paddock for the first time.",
-    currentCondition: "Fully rehabilitated. Healthy weight, glossy coat, and excellent bloodwork. Marta now helps socialise newly arrived horses through shared fence contact — her calm presence has been invaluable to Luna and Rex.",
-    needs: ['Hoof care every 6 weeks', 'Annual dental float', 'Monthly deworming', 'Continued routine vaccination'],
-    monthlyNeed: 180,
+    {
+    id: 'bojevaja',
+    name: 'Бойова',
+    age: '20XX-2026',
+    status: "кінь у пам'яті",
+    photo: '/horse-rescue-web/images/bojevaja.jpg',
+    heroPhoto: '/horse-rescue-web/images/bojevaja.jpg',
+    //additionalPhotos: [
+      //'https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=900&h=600&fit=crop&auto=format',
+      //'https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=600&fit=crop&auto=format',
+    //],
+    shortBio: "Мати Брітні",
+    rescueStory: "Ще зовсім маленькою вона мала загинути на бійні. Її вдалося викупити та забрати до міського прокату, але й там на неї чекало жорстоке поводження. Через 8 років тяжкої роботи вона потрапила до нашого фонду. /n Ми почали її відновлювати - поступово повертали сили, лікували та вчили знову довіряти людям. Вона оговталася й нарешті отримала шанс на спокійне життя. /n Та під час обстрілу неподалік від конюшні в неї влучили уламки. Вона отримала важкі опіки. Ми боролися за її життя, намагалися стабілізувати її стан, зробили переливання крові, але воно не дало очікуваного результату. /n Вона не вижила. /n Але останні дні свого життя вона провела там, де про неї піклувалися, лікували й любили. І для нас її історія - ще одне нагадування про те, чому ми продовжуємо рятувати.",
+  },
+    {
+    id: 'britni',
+    name: 'Брітні',
+    age: 'Рік народження: 2017',
+    status: 'кінь фонду',
+    photo: '/horse-rescue-web/images/britni.jpg',
+    heroPhoto: '/horse-rescue-web/images/britni.jpg',
+    //additionalPhotos: [
+      //'https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=900&h=600&fit=crop&auto=format',
+      //'https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=600&fit=crop&auto=format',
+    //],
+    shortBio: "Лоша Бойової",
+    rescueStory: "Викуплена з міського прокату. Брітні почали заїжджати в 7 місяців, через що вона не виросла як слід і тепер страждає від проблем із суглобами.",
   },
   {
-    id: 'bruno',
-    name: 'Bruno',
-    age: 7,
-    breed: 'Belgian Draft',
-    gender: 'gelding',
-    status: 'recovering',
-    rescuedDate: 'November 2023',
-    location: 'Large stable block',
-    photo: 'https://images.unsplash.com/photo-1514861889637-9f51bc99fc19?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1514861889637-9f51bc99fc19?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [
-      'https://images.unsplash.com/photo-1682636109994-4f2bbee2fd72?w=900&h=600&fit=crop&auto=format',
-    ],
-    shortBio: "Bruno was surrendered by a farming family after sustaining a serious leg injury. At 600 kg, he needs specialist equipment and daily physical therapy.",
-    rescueStory: "Bruno's former owners contacted us in October 2023 when they realised they couldn't afford the surgery their draft horse needed. A kick from another horse had fractured a small bone in his left foreleg. Without intervention, he would have been put down.\n\nWe partnered with the University Veterinary Clinic to perform the surgery in November 2023. Bruno spent three months in strict stall rest before beginning a careful rehabilitation programme.",
-    currentCondition: "Eight months post-surgery. Walking normally in the paddock. Still requires bi-weekly physiotherapy and controlled exercise. Prognosis is positive — the vet expects full recovery by spring.",
-    needs: ['Bi-weekly physiotherapy sessions', 'Anti-inflammatory medication', 'Extra bedding (double quantity)', 'Specialist farrier visits every 5 weeks'],
-    monthlyNeed: 420,
+    id: 'bagira',
+    name: 'Багіра',
+    age: 'Рік народження: 2022',
+    status: 'кінь фонду',
+    photo: '/horse-rescue-web/images/bagira.jpg',
+    heroPhoto: '/horse-rescue-web/images/bagira.jpg',
+    //additionalPhotos: [
+      //'https://images.unsplash.com/photo-1783267152320-947d4cadd869?w=900&h=600&fit=crop&auto=format',
+      //'https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=600&fit=crop&auto=format',
+    //],
+    shortBio: "Лоша Брітні",
+    rescueStory: "Багіра народилася в окупації, але з першого дня свого життя була оточена абсолютною турботою. Саме тому вона знає лише любов і повну довіру до людини.",
   },
-  {
-    id: 'luna',
-    name: 'Luna',
-    age: 4,
-    breed: 'Lusitano',
-    gender: 'mare',
-    status: 'stable',
-    rescuedDate: 'June 2024',
-    location: 'Training paddock',
-    photo: 'https://images.unsplash.com/photo-1603985724731-287f8d5faf7e?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1603985724731-287f8d5faf7e?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [],
-    shortBio: "Seized by authorities from an illegal breeding operation, Luna arrived fearful and unhandled. At four years old, she has her whole life ahead of her.",
-    rescueStory: "Luna was one of eleven horses seized from an illegal breeding operation in June 2024. She had never been properly socialised with humans and arrived in a state of extreme anxiety — unable to be haltered, backing away from any approach.\n\nOur team began working with a certified equine behaviourist in July. Progress is slow and deliberate. Luna now allows haltering and can be led with minimal resistance.",
-    currentCondition: "Medically healthy — all bloodwork normal, vaccinations complete, dental care done. Behaviourally still in early rehabilitation. Makes measurable progress each week. We expect six to twelve more months of patient groundwork before she's truly comfortable around people.",
-    needs: ['Weekly behavioural training sessions', 'Enrichment materials', 'Continued socialisation programme', 'Regular handling by trained volunteers'],
-    monthlyNeed: 280,
-  },
-  {
-    id: 'kaspar',
-    name: 'Kaspar',
-    age: 19,
-    breed: 'Hanoverian',
-    gender: 'gelding',
-    status: 'stable',
-    rescuedDate: 'January 2023',
-    location: 'Senior paddock',
-    photo: 'https://images.unsplash.com/photo-1561361649-c86e8a408c95?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1561361649-c86e8a408c95?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [],
-    shortBio: "A former competition horse, Kaspar spent his final years in neglect after his owner lost interest. He arrived with severe arthritis and a broken spirit.",
-    rescueStory: "Kaspar competed at regional dressage level until age fourteen. When his competitive career ended, his owner's attention moved elsewhere. By the time a neighbour reported him to authorities, Kaspar had been living in a muddy paddock without shelter through two winters, his arthritis completely untreated.\n\nHis first winter with us was difficult. But with heated stabling, careful medication, and the quiet company of other senior horses, something shifted in him by spring.",
-    currentCondition: "Arthritis well-managed with daily medication and monthly joint injections. Good appetite. Comfortable in his routine — gentle walks in the paddock, grooming sessions, and social time with Marta. A dignified, unhurried life.",
-    needs: ['Daily arthritis medication', 'Monthly joint injections', 'Senior feed supplement', 'Heated stabling in winter months'],
-    monthlyNeed: 350,
-  },
-  {
-    id: 'bella',
-    name: 'Bella',
-    age: 3,
-    breed: 'Friesian cross',
-    gender: 'mare',
-    status: 'thriving',
-    rescuedDate: 'September 2022',
-    location: 'Main paddock',
-    photo: 'https://images.unsplash.com/photo-1504310977373-186d29f99322?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1504310977373-186d29f99322?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [],
-    shortBio: "Born at the sanctuary to a mare we rescued, Bella has known only kindness. She reminds us every day why this work matters.",
-    rescueStory: "Bella was born here in September 2022, three weeks after her mother Rona arrived from a hoarding situation. Rona was pregnant when we found her — malnourished and in poor condition. Our team stayed up through the night for the birth.\n\nBella has never known anything but safety, good food, and gentle handling. She is curious, confident, and already a favourite with our volunteers.",
-    currentCondition: "Young and completely healthy. Currently receiving basic groundwork and socialisation to prepare her for a future as a gentle, well-adjusted horse. We are accepting adoption enquiries from experienced horse owners.",
-    needs: ['Regular training and socialisation', 'Standard hoof and dental care', 'Finding the right forever home'],
-    monthlyNeed: 160,
-  },
-  {
-    id: 'rex',
-    name: 'Rex',
-    age: 9,
-    breed: 'Knabstrupper',
-    gender: 'stallion',
-    status: 'critical',
-    rescuedDate: 'August 2024',
-    location: 'Medical stable',
-    photo: 'https://images.unsplash.com/photo-1601317210034-a040bdbfe891?w=600&h=720&fit=crop&auto=format',
-    heroPhoto: 'https://images.unsplash.com/photo-1601317210034-a040bdbfe891?w=1600&h=900&fit=crop&auto=format',
-    additionalPhotos: [],
-    shortBio: "Rex arrived just six weeks ago in critical condition — severe malnutrition and an untreated wound. He is fighting every day, and so are we.",
-    rescueStory: "Rex came to us in August 2024 through an emergency call from the regional animal welfare office. He had been found tied to a tree in a forest, severely underweight, with a large open wound on his shoulder that had been left untreated for weeks.\n\nOur vet team worked through the night on his arrival. He required a blood transfusion, wound surgery, and IV nutrition for the first ten days. He is stable now, but still far from safe.",
-    currentCondition: "Critical but stable. Daily wound care, refeeding programme under strict veterinary supervision. He is responding to treatment — gaining weight slowly, and beginning to show interest in his surroundings. Each day counts.",
-    needs: ['Daily veterinary visits', 'Wound care materials', 'Specialised refeeding diet', 'Blood monitoring (bi-weekly)', 'Urgent additional funding'],
-    monthlyNeed: 680,
-  },
+ 
+
 ];
 
 export type CampaignStatus = 'active' | 'completed';
