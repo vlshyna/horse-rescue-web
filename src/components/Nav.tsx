@@ -135,7 +135,7 @@ function LangSwitcher({ isTransparent }: { isTransparent: boolean }) {
 
   return (
     <div className="flex items-center gap-0.5 border border-current/10 rounded-sm overflow-hidden">
-      {(['en', 'uk'] as const).map((l) => (
+      {(['ua', 'en'] as const).map((l) => (
         <button
           key={l}
           onClick={() => setLang(l)}
