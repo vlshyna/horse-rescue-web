@@ -1,24 +1,22 @@
-import { MotifLine } from './Motif';
+import { useLang } from '../LangContext';
+import { translations } from '../i18n';
 
 interface FooterProps {
   navigate: (page: string, id?: string, section?: string) => void;
 }
 
 export default function Footer({ navigate }: FooterProps) {
+  const { lang } = useLang();
+  const T = translations[lang];
+
   return (
     <footer className="bg-charcoal text-cream/70">
-      <div className="text-charcoal">
-        <MotifLine className="h-12" strokeWidth={0.5} />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-12 pb-16">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
           {/* Brand */}
           <div>
-            <div className="font-serif text-2xl text-cream mb-3">Open Pastures</div>
-            <p className="text-sm leading-relaxed text-cream/55 mb-4">
-              A non-profit sanctuary rescuing, rehabilitating, and rehoming horses across Central Europe since 2019.
-            </p>
+            <div className="font-serif text-2xl text-cream mb-3">Free Horses</div>
+            <p className="text-sm leading-relaxed text-cream/55 mb-4">{T.footer.tagline}</p>
             <div className="flex gap-3">
               <SocialLink href="#" label="Instagram">
                 <path d="M16 3H8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V8a5 5 0 0 0-5-5Z" />
@@ -33,13 +31,15 @@ export default function Footer({ navigate }: FooterProps) {
 
           {/* Navigation */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-cream/35 mb-4">Navigate</div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-cream/35 mb-4">
+              {T.footer.navigate}
+            </div>
             <nav className="flex flex-col gap-2.5">
               {[
-                { label: 'Our Horses', action: 'home', section: 'horses' },
-                { label: 'How to Help', action: 'home', section: 'help' },
-                { label: 'Donations & Reports', action: 'donations' },
-                { label: 'Contact', action: 'home', section: 'contact' },
+                { label: T.nav.ourHorses, action: 'home', section: 'horses' },
+                { label: T.nav.howToHelp, action: 'home', section: 'help' },
+                { label: T.nav.donations, action: 'donations' },
+                { label: T.nav.contact, action: 'home', section: 'contact' },
               ].map((link) => (
                 <button
                   key={link.label}
@@ -54,17 +54,19 @@ export default function Footer({ navigate }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-cream/35 mb-4">Contact</div>
+            <div className="text-xs font-semibold tracking-widest uppercase text-cream/35 mb-4">
+              {T.footer.contact}
+            </div>
             <div className="flex flex-col gap-2.5 text-sm text-cream/55">
               <div>Paseky 47, 756 57 Valašská Bystřice</div>
-              <a href="mailto:info@openpastures.org" className="hover:text-cream/85 transition-colors">
-                info@openpastures.org
+              <a href="mailto:info@freehorses.org" className="hover:text-cream/85 transition-colors">
+                info@freehorses.org
               </a>
               <a href="tel:+420603123456" className="hover:text-cream/85 transition-colors">
                 +420 603 123 456
               </a>
               <div className="mt-2 pt-3 border-t border-cream/10">
-                <div className="text-xs text-cream/35 mb-1">Bank transfer</div>
+                <div className="text-xs text-cream/35 mb-1">{T.contact.bankTransfer}</div>
                 <div className="font-mono text-xs text-cream/50">CZ65 0800 0000 1920 0014 5399</div>
               </div>
             </div>
@@ -72,7 +74,7 @@ export default function Footer({ navigate }: FooterProps) {
         </div>
 
         <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-cream/30">
-          <div>© 2024 Open Pastures Foundation. Non-profit registered in Czech Republic.</div>
+          <div>© 2024 Free Horses Foundation. {T.footer.registered}</div>
           <div>IČO: 08 123 456</div>
         </div>
       </div>
