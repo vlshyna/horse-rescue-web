@@ -108,7 +108,7 @@ export default function HomePage({ navigate, scrollTarget }: HomePageProps) {
           <div className="relative">
             <div className="aspect-[4/5] bg-cream-dark rounded overflow-hidden">
               <img
-                src="/images/Liza.jpg"
+                src="/horse-rescue-web/images/Liza.jpg"
                 alt="Ліза і Багіра"
                 className="w-full h-full object-cover"
                 loading="lazy"
