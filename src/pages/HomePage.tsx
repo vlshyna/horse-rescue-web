@@ -586,7 +586,7 @@ function HorseCard({
 
       <div>
         <div className="flex items-start justify-between gap-1 mb-0.5">
-          <h3 className="font-serif text-[15px] md:text-sm text-charcoal leading-tight">
+          <h3 className="font-bold text-[17px] md:text-sm text-charcoal leading-tight">
             {horse.name}
           </h3>
 
@@ -597,9 +597,7 @@ function HorseCard({
           </span>
         </div>
 
-        <p className="text-[10px] text-charcoal/45 leading-tight">
-          {horse.age}
-        </p>
+        
       </div>
     </button>
   );
