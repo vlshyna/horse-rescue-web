@@ -591,7 +591,7 @@ function HorseCard({
           </h3>
 
           <span
-            className={`text-[12px] font-semibold px-1.5 py-0.5 rounded-sm shrink-0 mt-0.5 leading-tight ${status.cls}`}
+            className={`text-[14px] font-semibold px-1.5 py-0.5 rounded-sm shrink-0 mt-0.5 leading-tight ${status.cls}`}
           >
             {statusLabels[horse.status]}
           </span>
