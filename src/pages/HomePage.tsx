@@ -81,13 +81,15 @@ export default function HomePage({
               {T.hero.label}
             </p>
 
-            <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.06] mb-6">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-cream leading-[1.06] mb-6">
               {T.hero.headline1}
               <br />
               {T.hero.headline2}
+              <br />
+              {T.hero.headline3}
             </h1>
 
-            <p className="text-cream/70 text-[16px] leading-relaxed mb-9 max-w-lg">
+            <p className="text-cream/70 text-lg leading-relaxed mb-9 max-w-lg">
               {T.hero.sub}
             </p>
 
@@ -111,8 +113,6 @@ export default function HomePage({
           </div>
         </div>
       </section>
-
-
 
       {/* Stats */}
       <section className="bg-charcoal text-cream">
@@ -161,8 +161,6 @@ export default function HomePage({
         </div>
       </section>
 
-      
-
       {/* Mission */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -171,7 +169,7 @@ export default function HomePage({
               {T.mission.label}
             </p>
 
-            <h2 className="font-bold text-2xl md:text-3xl text-charcoal leading-tight mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-tight mb-6">
               {T.mission.headline}
             </h2>
 
