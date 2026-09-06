@@ -81,15 +81,13 @@ export default function HomePage({
               {T.hero.label}
             </p>
 
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-cream leading-[1.06] mb-6">
+            <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.06] mb-6">
               {T.hero.headline1}
               <br />
               {T.hero.headline2}
-              <br />
-              {T.hero.headline3}
             </h1>
 
-            <p className="text-cream/70 text-lg leading-relaxed mb-9 max-w-lg">
+            <p className="text-cream/70 text-[16px] leading-relaxed mb-9 max-w-lg">
               {T.hero.sub}
             </p>
 
@@ -114,52 +112,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-charcoal text-cream">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-cream/10">
-            {[
-              {
-                value: '47',
-                label: T.stats.rescued,
-                sub: T.stats.since,
-              },
-              {
-                value: '12',
-                label: T.stats.inCare,
-                sub: T.stats.inCareAt,
-              },
-              {
-                value: '31',
-                label: T.stats.rehomed,
-                sub: T.stats.rehomedTo,
-              },
-              {
-                value: '94%',
-                label: T.stats.recovery,
-                sub: T.stats.recoveryOf,
-              },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="md:px-10 first:pl-0 last:pr-0"
-              >
-                <div className="font-serif text-4xl md:text-5xl text-cream mb-1">
-                  {stat.value}
-                </div>
-
-                <div className="text-sm font-semibold text-cream/80">
-                  {stat.label}
-                </div>
-
-                <div className="text-xs text-cream/35 mt-0.5">
-                  {stat.sub}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Mission */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
@@ -169,7 +122,7 @@ export default function HomePage({
               {T.mission.label}
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-tight mb-6">
+            <h2 className="font-bold text-2xl md:text-3xl text-charcoal leading-tight mb-6">
               {T.mission.headline}
             </h2>
 
