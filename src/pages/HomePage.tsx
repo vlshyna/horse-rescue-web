@@ -586,18 +586,18 @@ function HorseCard({
 
       <div>
         <div className="flex items-start justify-between gap-1 mb-0.5">
-          <h3 className="font-serif text-base md:text-sm text-charcoal leading-tight">
+          <h3 className="font-serif text-2xl md:text-sm text-charcoal leading-tight">
             {horse.name}
           </h3>
 
           <span
-            className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-sm shrink-0 mt-0.5 leading-tight ${status.cls}`}
+            className={`text-[16px] font-semibold px-1.5 py-0.5 rounded-sm shrink-0 mt-0.5 leading-tight ${status.cls}`}
           >
             {statusLabels[horse.status]}
           </span>
         </div>
 
-        <p className="text-[10px] text-charcoal/45 leading-tight">
+        <p className="text-[16px] text-charcoal/45 leading-tight">
           {horse.age}
         </p>
       </div>
