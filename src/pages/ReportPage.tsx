@@ -60,6 +60,7 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
       </div>
 
       <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-24">
+        
         {/* Summary */}
         <section className="mb-14">
           <p className="text-xs font-semibold tracking-widest uppercase text-green mb-4">{T.reportPage.summaryLabel}</p>
@@ -90,7 +91,7 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
                   <div className="flex justify-between items-baseline gap-2 mb-1.5">
                     <span className="text-sm font-semibold text-charcoal">{item.category}</span>
                     <span className="text-sm font-semibold text-charcoal shrink-0">
-                      €{item.amount.toLocaleString()}
+                     ₴{item.amount.toLocaleString()}
                       <span className="text-charcoal/35 font-normal ml-1.5 text-xs">({itemPct}%)</span>
                     </span>
                   </div>
@@ -149,6 +150,6 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
           </p>
         </div>
       </div>
-    // </div>
+     </div>
   );
 }
