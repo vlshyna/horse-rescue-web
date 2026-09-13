@@ -59,7 +59,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
               <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
               {T.donationsPage.active}
             </span>
-            <span className="text-sm text-charcoal">{campaign.startDate}</span>
+            <span className="text-sm text-charcoal/70">{campaign.startDate}</span>
           </div>
 
           <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">{campaign.title}</h2>
@@ -68,7 +68,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           <div className="mb-8">
             <div className="flex justify-between items-baseline mb-2.5">
               <span className="font-serif text-3xl text-charcoal">₴{campaign.raised.toLocaleString()}</span>
-              <span className="text-sm text-charcoal/45">{T.donationsPage.active !== 'Active' ? 'мета' : 'of'} ₴{campaign.target.toLocaleString()}</span>
+              <span className="text-base text-charcoal/85">{T.donationsPage.active !== 'Active' ? 'мета' : 'of'} ₴{campaign.target.toLocaleString()}</span>
             </div>
             <div className="h-2.5 bg-cream-dark rounded-full overflow-hidden">
               <div className="h-full bg-brown rounded-full transition-all duration-700" style={{ width: `${pct}%` }} />
@@ -80,34 +80,15 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <button className="bg-brown text-cream text-sm font-semibold px-6 py-3 rounded-sm hover:bg-brown-hover transition-colors">
-              {T.donationsPage.donateToCampaign}
-            </button>
             <a
               href="https://send.monobank.ua/jar/9CDLTWeRna"
-              className="border border-charcoal/15 text-charcoal/70 text-sm font-semibold px-5 py-3 rounded-sm hover:border-charcoal/30 hover:text-charcoal transition-colors"
-            >
+               className="inline-block bg-brown text-cream text-sm font-semibold px-6 py-3 rounded-sm hover:bg-brown-hover transition-colors">
               {T.donationsPage.bankTransfer}
             </a>
           </div>
         </div>
 
-       {/*  <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/35 mb-4">{T.donationsPage.horsesIn}</p>
-            <div className="flex flex-wrap gap-2">
-              {(campaign.horses || []).map((id) => (
-                <button
-                  key={id}
-                  onClick={() => navigate('horse', id)}
-                  className="text-xs font-medium bg-cream border border-charcoal/12 px-2.5 py-1 rounded-sm text-charcoal/65 hover:border-brown/40 hover:text-brown transition-colors capitalize"
-                >
-                  {id}
-                </button>
-              ))}
-            </div>
-          </div> */}
-
+         <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/75 mb-3">{T.donationsPage.bankTransfer}</p>
             <div className="space-y-1.5 text-sm">
@@ -127,7 +108,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
         </div>
       </div>
-    // </div>
+     </div>
   );
 }
 
