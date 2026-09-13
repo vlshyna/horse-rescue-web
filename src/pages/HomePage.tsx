@@ -104,7 +104,7 @@ export default function HomePage({
               </button>
 
               <button
-                onClick={() => navigate('home', undefined, 'help'}
+                onClick={() => navigate('home', undefined, 'help')}
                 className="border border-cream/40 text-cream text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream/10 transition-colors"
               >
                 {T.hero.support}
