@@ -254,8 +254,8 @@ export const campaigns: Campaign[] = [
 
       Твій внесок - не просто підтримка ферми. Це турбота про тварин і можливість стати частиною їхнього життя.
       Дякуємо кожному, хто долучається!`,
-    target: 612 000,
-    raised: 32 022,
+    target: 612.000,
+    raised: 32.022,
     status: 'active',
     startDate: 'Август 2026',
     horses: ['britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
@@ -267,8 +267,8 @@ export const campaigns: Campaign[] = [
     title: 'Викуп вагітної кобили з бійні',
     description:
       'М'ясник збирався зарізати вагітну кобилу. Засновниця фонду терміново відкрила збір на її викуп. За один день ми зібрали необхідну суму та врятували кобилу',
-    target: 45 000,
-    raised: 51 630,
+    target: 45.000,
+    raised: 51.630,
     status: 'completed',
     startDate: '21 Березня 2026',
     endDate: '21 Березня 2026',
@@ -280,19 +280,19 @@ export const campaigns: Campaign[] = [
       spending: [
       {
           category: 'Викуп кобили',
-          amount: 45 000,
+          amount: 45.000,
           description:
             '',
         },
         {
           category: 'Вакцинація',
-          amount: 3 320,
+          amount: 3.320,
           description:
             '',
         },
         {
           category: 'Корма',
-          amount: 3 310,
+          amount: 3.310,
           description:
             '',
         },
