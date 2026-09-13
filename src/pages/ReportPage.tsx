@@ -104,6 +104,51 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
             })}
           </div>
 
+             {/* Transaction proof */}
+        <section className="mb-14">
+          <p className="text-xs font-semibold tracking-widest uppercase text-green mb-3">
+            Підтвердження витрат
+          </p>
+
+          <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">
+            Документи та транзакції
+          </h2>
+
+          <p className="text-charcoal/70 text-base leading-relaxed mb-6 max-w-3xl">
+            Тут ми залишаємо фото чеків, підтвердження оплат та інші документи,
+            що підтверджують використання коштів зі збору.
+          </p>
+
+          <div className="space-y-3">
+            {report.transactionLinks?.map((link) => (
+              <a
+                key={link.title}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-4 border border-charcoal/10 rounded-sm bg-cream px-5 py-4 text-charcoal hover:border-brown/40 hover:text-brown transition-colors"
+              >
+                <span className="font-medium">{link.title}</span>
+
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0"
+                >
+                  <path d="M5 3h8v8" />
+                  <path d="M13 3 7 9" />
+                  <path d="M11 9v3H3V4h3" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </section>
           
           {/* <div className="border border-charcoal/10 rounded-sm overflow-hidden">
             <table className="w-full text-sm">
