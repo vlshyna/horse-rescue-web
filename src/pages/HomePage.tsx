@@ -255,7 +255,7 @@ export default function HomePage({
                   {T.campaign.label}
                 </p>
 
-                <h2 className="font-serif text-4xl md:text-5xl text-cream mb-5 leading-tight">
+                <h2 className="font-bold text-2xl md:text-3xl text-cream mb-5 leading-tight">
                   {activeCampaign.title}
                 </h2>
 
