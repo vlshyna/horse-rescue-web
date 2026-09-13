@@ -312,7 +312,7 @@ export default function HomePage({
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 aspect-[16/9] bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="/horse-rescue-web/f1.jpg"
+                    src="/horse-rescue-web/images/f1.jpg"
                     alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
@@ -321,7 +321,7 @@ export default function HomePage({
 
                 <div className="aspect-square bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="/horse-rescue-web/f2.jpg"
+                    src="/horse-rescue-web/images/f2.jpg"
                     alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
@@ -330,7 +330,7 @@ export default function HomePage({
 
                 <div className="aspect-square bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="/horse-rescue-web/f3.jpg"
+                    src="/horse-rescue-web/images/f3.jpg"
                     alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
@@ -442,23 +442,6 @@ export default function HomePage({
                 />
               </div>
 
-              <div className="bg-cream border border-charcoal/10 rounded-sm p-5">
-                <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-2">
-                  {T.contact.bankTransfer}
-                </p>
-
-                <p className="text-sm text-charcoal/60 mb-1">
-                  БО "БФ "ФРІ ХОРСЕС"
-                </p>
-
-                <p className="font-mono text-sm text-charcoal">
-                  UA943220010000026046700014214
-                </p>
-
-                <p className="text-xs text-charcoal/40 mt-1">
-                  с.Віта Поштова, Фастівський район
-                </p>
-              </div>
             </div>
           </div>
         </div>
