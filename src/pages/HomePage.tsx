@@ -133,7 +133,7 @@ export default function HomePage({
             </div>
           </div>
 
-          <div className="relative w-full max-w-[300px]">
+          <div className="relative w-full max-w-[500px]">
             <div className="aspect-[4/5] bg-cream-dark rounded overflow-hidden">
               <img
                 src="/horse-rescue-web/images/Liza.jpg"
@@ -259,19 +259,19 @@ export default function HomePage({
                   {activeCampaign.title}
                 </h2>
 
-                <p className="text-cream/60 leading-relaxed mb-8">
+                <p className="text-cream/80 leading-relaxed mb-8 whitespace-pre-line">
                   {activeCampaign.description}
                 </p>
 
                 <div className="mb-8">
                   <div className="flex justify-between text-sm mb-2.5">
                     <span className="text-cream font-semibold">
-                      €{activeCampaign.raised.toLocaleString()}{' '}
+                       ₴{activeCampaign.raised.toLocaleString()}{' '}
                       {T.campaign.raised}
                     </span>
 
                     <span className="text-cream/40">
-                      {T.campaign.goal}: €
+                      {T.campaign.goal}: ₴
                       {activeCampaign.target.toLocaleString()}
                     </span>
                   </div>
@@ -312,8 +312,8 @@ export default function HomePage({
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 aspect-[16/9] bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1761673295751-a4f49c60aa5c?w=900&h=500&fit=crop&auto=format"
-                    alt="Two horses eating hay from a wooden feeder"
+                    src="/horse-rescue-web/f1.jpg"
+                    alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
                   />
@@ -321,8 +321,8 @@ export default function HomePage({
 
                 <div className="aspect-square bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1777880014619-a4833c9abd9f?w=500&h=500&fit=crop&auto=format"
-                    alt="Horses in warm stable stalls"
+                    src="/horse-rescue-web/f2.jpg"
+                    alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
                   />
@@ -330,8 +330,8 @@ export default function HomePage({
 
                 <div className="aspect-square bg-charcoal-light rounded overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1682636109994-4f2bbee2fd72?w=500&h=500&fit=crop&auto=format"
-                    alt="A horse resting in a warm barn"
+                    src="/horse-rescue-web/f3.jpg"
+                    alt=""
                     className="w-full h-full object-cover opacity-75"
                     loading="lazy"
                   />
