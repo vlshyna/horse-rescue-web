@@ -215,11 +215,10 @@ export interface SpendingItem {
 export interface CampaignReport {
   summary: string;
   spending: SpendingItem[];
-  quote: string;
-  quoteAuthor: string;
-  outcomes: string[];
-  remainingFunds: number;
-  remainingNote: string;
+  transactionLinks?: {
+    title: string;
+    url: string;
+  }[];
 }
 
 export interface Campaign {
