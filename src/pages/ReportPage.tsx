@@ -77,7 +77,7 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
               <h2 className="font-serif text-3xl md:text-4xl text-charcoal">{T.reportPage.spendingHeading}</h2>
             </div>
             <div className="text-right shrink-0">
-              <div className="font-serif text-3xl text-charcoal">€{totalSpent.toLocaleString()}</div>
+              <div className="font-serif text-3xl text-charcoal">₴{totalSpent.toLocaleString()}</div>
               <div className="text-xs text-charcoal/40 mt-0.5">{T.reportPage.totalDocumented}</div>
             </div>
           </div>
