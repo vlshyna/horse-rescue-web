@@ -312,5 +312,5 @@ export const campaigns: Campaign[] = [
             url: 'https://...',
           },
         ],
-  },
+  },},
 ];
