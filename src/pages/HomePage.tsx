@@ -133,12 +133,12 @@ export default function HomePage({
             </div>
           </div>
 
-          <div className="relative w-full max-w-[500px]">
-            <div className="aspect-[4/5] bg-cream-dark rounded overflow-hidden">
+          <div className="relative w-full max-w-[700px]">
+            <div className="bg-cream-dark rounded overflow-hidden">
               <img
                 src="/horse-rescue-web/images/Liza.jpg"
                 alt="Ліза і Багіра"
-                className="w-full h-full object-cover"
+                className="w-auto h-[420px] max-w-full object-contain"
                 loading="lazy"
               />
             </div>
