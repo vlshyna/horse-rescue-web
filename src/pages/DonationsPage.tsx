@@ -31,7 +31,7 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
           <ActiveCampaignCard campaign={active} navigate={navigate} T={T} />
         </section>
 
-        {/* Transparency note */}
+        {/* Transparency note 
         <section className="mb-16 md:mb-24 bg-cream-dark border border-charcoal/8 rounded-sm p-7 md:p-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
@@ -43,7 +43,7 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
               </div>
             </div>
            
-            {/* <div className="grid grid-cols-2 gap-4">
+             <div className="grid grid-cols-2 gap-4">
               {[
                 { num: '4', label: T.donationsPage.campaigns },
                 { num: '100%', label: T.donationsPage.published },
@@ -55,10 +55,10 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
                   <div className="text-xs text-charcoal/50">{s.label}</div>
                 </div>
               ))}
-            </div> */}
+            </div>
             
           </div>
-        </section>
+        </section> */}
 
         {/* Past campaigns */}
         <section>
@@ -88,7 +88,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
               <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
               {T.donationsPage.active}
             </span>
-            <span className="text-s text-charcoal">{campaign.startDate}</span>
+            <span className="text-xs text-charcoal">{campaign.startDate}</span>
           </div>
 
           <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">{campaign.title}</h2>
@@ -113,7 +113,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
               {T.donationsPage.donateToCampaign}
             </button>
             <a
-              href="mailto:info@freehorses.org?subject=Bank transfer donation"
+              href="https://send.monobank.ua/jar/9CDLTWeRna"
               className="border border-charcoal/15 text-charcoal/70 text-sm font-semibold px-5 py-3 rounded-sm hover:border-charcoal/30 hover:text-charcoal transition-colors"
             >
               {T.donationsPage.bankTransfer}
@@ -121,7 +121,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
         </div>
 
-        <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
+        {/* <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/35 mb-4">{T.donationsPage.horsesIn}</p>
             <div className="flex flex-wrap gap-2">
@@ -135,7 +135,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/75 mb-3">{T.donationsPage.bankTransfer}</p>
@@ -173,7 +173,7 @@ function PastCampaignRow({ campaign, navigate, T }: { campaign: Campaign; naviga
               {T.donationsPage.completed}
             </span>
             {campaign.startDate && (
-              <span className="text-s text-charcoal/35">
+              <span className="text-xs text-charcoal/50">
                 {campaign.startDate}{campaign.endDate ? ` – ${campaign.endDate}` : ''}
               </span>
             )}
@@ -185,14 +185,14 @@ function PastCampaignRow({ campaign, navigate, T }: { campaign: Campaign; naviga
         <div className="md:col-span-1">
           <div className="flex justify-between text-sm mb-1.5">
             <span className={`font-semibold ${exceeded ? 'text-green' : 'text-charcoal'}`}>
-              €{campaign.raised.toLocaleString()}
+              ₴{campaign.raised.toLocaleString()}
             </span>
-            <span className="text-charcoal/40">€{campaign.target.toLocaleString()}</span>
+            <span className="text-charcoal/40">₴{campaign.target.toLocaleString()}</span>
           </div>
           <div className="h-1.5 bg-cream-dark rounded-full overflow-hidden">
             <div className={`h-full rounded-full ${exceeded ? 'bg-green' : 'bg-brown'}`} style={{ width: `${Math.min(100, pct)}%` }} />
           </div>
-          <div className="mt-1 text-s text-charcoal/35">
+          <div className="mt-1 text-xs text-charcoal/50">
             {exceeded ? `+₴${(campaign.raised - campaign.target).toLocaleString()} ${T.donationsPage.overTarget}` : `${pct}% ${T.donationsPage.funded}`}
           </div>
         </div>
