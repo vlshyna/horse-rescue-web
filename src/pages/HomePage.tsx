@@ -225,9 +225,7 @@ export default function HomePage({
               title={T.help.volunteer}
               body={T.help.volunteerBody}
               cta={T.help.volunteerCta}
-              onClick={() =>
-                navigate('home', undefined, 'contact')
-              }
+              href="https://www.instagram.com/karpovich_liza_/"
               accent="green"
             />
 
@@ -236,9 +234,7 @@ export default function HomePage({
               title={T.help.sponsor}
               body={T.help.sponsorBody}
               cta={T.help.sponsorCta}
-              onClick={() =>
-                navigate('home', undefined, 'horses')
-              }
+              href="https://www.instagram.com/karpovich_liza_/"
               accent="sky"
             />
           </div>
@@ -352,11 +348,11 @@ export default function HomePage({
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl text-charcoal mb-2">
+                <h3 className="font-bold text-2xl text-charcoal mb-2">
                   {T.transparency.heading}
                 </h3>
 
-                <p className="text-charcoal/60 text-sm leading-relaxed max-w-lg">
+                <p className="text-charcoal/80 text-sm leading-relaxed max-w-lg">
                   {T.transparency.body}
                 </p>
               </div>
@@ -498,6 +494,7 @@ function HelpCard({
   body,
   cta,
   onClick,
+  href,
   accent,
 }: {
   icon: React.ReactNode;
@@ -505,6 +502,7 @@ function HelpCard({
   body: string;
   cta: string;
   onClick: () => void;
+  href?: string;
   accent: 'brown' | 'green' | 'sky';
 }) {
   const accentCls = {
@@ -530,11 +528,11 @@ function HelpCard({
         {icon}
       </div>
 
-      <h3 className="font-serif text-2xl text-charcoal mb-3">
+      <h3 className="font-bold text-2xl text-charcoal mb-3">
         {title}
       </h3>
 
-      <p className="text-sm text-charcoal/60 leading-relaxed flex-1 mb-6">
+      <p className="text-sm text-charcoal/85 leading-relaxed flex-1 mb-6">
         {body}
       </p>
 
