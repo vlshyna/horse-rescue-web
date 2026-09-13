@@ -81,7 +81,7 @@ export default function HomePage({
               {T.hero.label}
             </p>
 
-            <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.06] mb-6">
+            <h1 className="font-bold text-2xl sm:text-4xl md:text-5xl text-cream leading-[1.06] mb-6">
               {T.hero.headline1}
               <br />
               {T.hero.headline2}
