@@ -18,7 +18,7 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
       {/* Header */}
       <div className="bg-charcoal py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sky mb-3">{T.donationsPage.label}</p>
+          <p className="text-sm font-semibold tracking-widest uppercase text-sky mb-3">{T.donationsPage.label}</p>
           <h1 className="font-serif text-5xl md:text-6xl text-cream mb-5">{T.donationsPage.heading}</h1>
           <p className="text-cream/55 max-w-xl leading-relaxed">{T.donationsPage.sub}</p>
         </div>
@@ -30,35 +30,6 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
           <p className="text-s font-semibold tracking-widest uppercase text-green mb-6">{T.donationsPage.activeNow}</p>
           <ActiveCampaignCard campaign={active} navigate={navigate} T={T} />
         </section>
-
-        {/* Transparency note 
-        <section className="mb-16 md:mb-24 bg-cream-dark border border-charcoal/8 rounded-sm p-7 md:p-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-4">{T.donationsPage.howHeading}</h2>
-              <div className="space-y-3 text-s text-charcoal leading-relaxed">
-                <p>{T.donationsPage.howP1}</p>
-                <p>{T.donationsPage.howP2}</p>
-                <p>{T.donationsPage.howP3}</p>
-              </div>
-            </div>
-           
-             <div className="grid grid-cols-2 gap-4">
-              {[
-                { num: '4', label: T.donationsPage.campaigns },
-                { num: '100%', label: T.donationsPage.published },
-                { num: '€0', label: T.donationsPage.surplus },
-                { num: '€33k+', label: T.donationsPage.total },
-              ].map((s) => (
-                <div key={s.label} className="bg-cream border border-charcoal/8 rounded-sm p-4">
-                  <div className="font-serif text-3xl text-charcoal mb-1">{s.num}</div>
-                  <div className="text-xs text-charcoal/50">{s.label}</div>
-                </div>
-              ))}
-            </div>
-            
-          </div>
-        </section> */}
 
         {/* Past campaigns */}
         <section>
@@ -88,7 +59,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
               <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
               {T.donationsPage.active}
             </span>
-            <span className="text-xs text-charcoal">{campaign.startDate}</span>
+            <span className="text-sm text-charcoal">{campaign.startDate}</span>
           </div>
 
           <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">{campaign.title}</h2>
@@ -121,8 +92,8 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
         </div>
 
-        <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
-        {/*   <div>
+       {/*  <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
+          <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/35 mb-4">{T.donationsPage.horsesIn}</p>
             <div className="flex flex-wrap gap-2">
               {(campaign.horses || []).map((id) => (
@@ -156,7 +127,7 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 
