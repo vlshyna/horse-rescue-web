@@ -128,8 +128,8 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
                   <td className="px-5 py-3.5 text-right text-charcoal/40 hidden md:table-cell">100%</td>
                 </tr>
               </tbody>
-            </table> */}
-          </div>
+            </table> 
+          </div>*/}
         </section>
 
 
