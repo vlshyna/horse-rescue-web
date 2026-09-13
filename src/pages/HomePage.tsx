@@ -371,54 +371,6 @@ export default function HomePage({
           </div>
         </div>
       </section>
-
-      {/* Stories */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="mb-12">
-            <p className="text-xs font-semibold tracking-widest uppercase text-green mb-3">
-              {T.stories.label}
-            </p>
-
-            <h2 className="font-serif text-4xl text-charcoal">
-              {T.stories.heading}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <StoryCard
-              date="September 2024"
-              title="Rex takes his first steps outside"
-              body="Three weeks after emergency surgery, Rex walked in the paddock for the first time."
-              photo="https://images.unsplash.com/photo-1783804450453-6a87fbef9369?w=700&h=480&fit=crop&auto=format"
-              alt="A brown horse standing in a field at twilight"
-              horseId="rex"
-              navigate={navigate}
-            />
-
-            <StoryCard
-              date="August 2024"
-              title="Luna accepts her first halter"
-              body="After eight weeks of patient groundwork, Luna was walked on a lead for the first time."
-              photo="https://images.unsplash.com/photo-1777133025718-ca8a34cdcd7d?w=700&h=480&fit=crop&auto=format"
-              alt="A horse grazing in a misty, sunlit field"
-              horseId="luna"
-              navigate={navigate}
-            />
-
-            <StoryCard
-              date="July 2024"
-              title="Bruno cleared for paddock time"
-              body="Eight months after his foreleg surgery, Bruno's vet gave the green light for limited paddock time."
-              photo="https://images.unsplash.com/photo-1772902540156-e298bcc8e3cc?w=700&h=480&fit=crop&auto=format"
-              alt="Two horses grazing in a field at sunset"
-              horseId="bruno"
-              navigate={navigate}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section
         id="contact"
@@ -431,11 +383,11 @@ export default function HomePage({
                 {T.contact.label}
               </p>
 
-              <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">
+              <h2 className="font-bold text-2xl md:text-3xl text-charcoal mb-6">
                 {T.contact.heading}
               </h2>
 
-              <p className="text-charcoal/60 leading-relaxed mb-8">
+              <p className="text-charcoal/85 leading-relaxed mb-8">
                 {T.contact.sub}
               </p>
 
@@ -444,30 +396,30 @@ export default function HomePage({
                   icon={<IconPin />}
                   label={T.contact.visitUs}
                 >
-                  Paseky 47, 756 57 Valašská Bystřice, Czech Republic
+                  с.Віта Поштова, Фастівський район
                 </ContactRow>
 
                 <ContactRow
-                  icon={<IconMail />}
+                  icon={<IconInstagram />}
                   label={T.contact.email}
                 >
                   <a
-                    href="mailto:info@freehorses.org"
+                    href="https://www.instagram.com/co_cf_freehorses/"
                     className="text-brown hover:underline"
                   >
-                    info@freehorses.org
+                    @co_cf_freehorses
                   </a>
                 </ContactRow>
 
                 <ContactRow
-                  icon={<IconPhone />}
+                  icon={<IconInstagram />}
                   label={T.contact.phone}
                 >
                   <a
-                    href="tel:+420603123456"
+                    href="https://www.instagram.com/karpovich_liza_/"
                     className="text-brown hover:underline"
                   >
-                    +420 603 123 456
+                    @karpovich_liza_
                   </a>
                 </ContactRow>
 
@@ -483,8 +435,8 @@ export default function HomePage({
             <div className="space-y-5">
               <div className="aspect-[4/3] bg-cream-deeper rounded overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1761245049310-88fb987d7e56?w=800&h=600&fit=crop&auto=format"
-                  alt="A horse peeking from a stable door"
+                  src="https://vlshyna.github.io/horse-rescue-web/images/vavilon-bulan.jpg"
+                  alt="vavilon-bulan"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -496,15 +448,15 @@ export default function HomePage({
                 </p>
 
                 <p className="text-sm text-charcoal/60 mb-1">
-                  Free Horses z.s.
+                  БО "БФ "ФРІ ХОРСЕС"
                 </p>
 
                 <p className="font-mono text-sm text-charcoal">
-                  CZ65 0800 0000 1920 0014 5399
+                  UA943220010000026046700014214
                 </p>
 
                 <p className="text-xs text-charcoal/40 mt-1">
-                  Česká spořitelna · BIC: GIBACZPX
+                  с.Віта Поштова, Фастівський район
                 </p>
               </div>
             </div>
@@ -737,6 +689,25 @@ function IconHorse() {
       <path d="M3,18 C3,18 5,12 9,10 C11,9 13,10 15,8 C17,6 17,4 19,4 L21,4" />
       <path d="M9,10 L9,18" />
       <path d="M15,13 L15,18" />
+    </svg>
+  );
+}
+
+function IconInstagram() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 3H8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V8a5 5 0 0 0-5-5Z" />
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
     </svg>
   );
 }
