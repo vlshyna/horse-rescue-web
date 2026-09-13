@@ -297,74 +297,18 @@ export const campaigns: Campaign[] = [
         },
        
       ],
-      quote:
-        "When Rex arrived, we weren't sure he would make it through the first night. The speed at which your donations arrived gave us the freedom to act immediately without hesitation. That's what saved him.",
-      quoteAuthor: 'Dr. Petra Nováková, Foundation Veterinarian',
-      outcomes: [
-        'Rex survived the first critical week and was transferred from ICU to sanctuary care',
-        'Wound infection cleared by day 18',
-        'Weight gain of 34 kg over the first six weeks',
-        'All donated funds were spent within the first six weeks of rescue',
-      ],
-      remainingFunds: 0,
-      remainingNote:
-        "All €3,200 raised were fully spent on Rex's emergency and recovery care. Rex continues to need ongoing care funded through our general donations and the current Winter Care campaign.",
+      transactionLinks: [
+    {
+      title: 'Фото чеків та оплат',
+      url: 'https://...',
     },
-  },
-
-  {
-    id: 'stables-repair-2023',
-    title: 'Stable Roof Repair',
-    description:
-      'Emergency structural repair to two stable roofs after storm damage in April 2023. Needed to provide safe, weatherproof housing for six horses through the coming winter.',
-    target: 4800,
-    raised: 5100,
-    status: 'completed',
-    startDate: 'May 2023',
-    endDate: 'July 2023',
-    horses: [],
-    reportAvailable: true,
-    report: {
-      summary:
-        'Following severe storm damage in April 2023, two of our stable blocks were deemed unsafe for horse habitation. The repair campaign exceeded its target by €300, allowing us to also insulate the western block. All work was completed by 20 July 2023.',
-      spending: [
-        {
-          category: 'Structural repairs',
-          amount: 2800,
-          description:
-            'Timber frame repairs and roof re-sheeting — both stable blocks',
-        },
-        {
-          category: 'Roofing materials',
-          amount: 1200,
-          description:
-            'Corrugated steel sheets, fixings, and waterproof membrane',
-        },
-        {
-          category: 'Insulation — bonus work',
-          amount: 620,
-          description:
-            'Rigid insulation board to western block walls — funded by the €300 surplus',
-        },
-        {
-          category: 'Labour',
-          amount: 480,
-          description:
-            'Local construction team — three days of skilled labour',
-        },
-      ],
-      quote:
-        "We've wanted to insulate that western block for two winters. The generosity of donors made it possible. The horses are noticeably calmer and warmer in there.",
-      quoteAuthor: 'Jiří Kovář, Sanctuary Manager',
-      outcomes: [
-        'Both stable blocks fully repaired and certified safe by 20 July 2023',
-        'Western block insulated — estimated 25% reduction in heating costs',
-        'Six horses moved back into repaired stabling before August',
-        '€300 surplus fully allocated to insulation — nothing held in reserve',
-      ],
-      remainingFunds: 0,
-      remainingNote:
-        'The campaign raised €5,100 against a target of €4,800. The €300 surplus was spent on the insulation project, with full transparency to all donors.',
+    {
+      title: 'Підтвердження оплати корму',
+      url: 'https://...',
+    },
+    {
+      title: 'Транзакції з банківської виписки',
+      url: 'https://...',
     },
   },
 
