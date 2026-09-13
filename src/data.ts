@@ -129,7 +129,7 @@ export const horses: Horse[] = [
     status: 'private',
     photo: '/horse-rescue-web/images/sparta.jpg',
     heroPhoto: '/horse-rescue-web/images/sparta.jpg',
-    //additionalPhotos: ['/horse-rescue-web/images/vavilon-bulan.jpg'],
+    additionalPhotos: [''],
     shortBio: 'Не всі історії можна розповісти',
     rescueStory:
       `Це приватний кінь, який живе на території нашої ферми разом із підопічними фонду.  
@@ -145,7 +145,7 @@ export const horses: Horse[] = [
     status: 'private',
     photo: '/horse-rescue-web/images/djo.jpg',
     heroPhoto: '/horse-rescue-web/images/djo.jpg',
-    //additionalPhotos: ['/horse-rescue-web/images/vavilon-bulan.jpg'],
+    additionalPhotos: [''],
     shortBio: 'Не всі історії можна розповісти',
     rescueStory:
       `Це приватний кінь, який живе на території нашої ферми разом із підопічними фонду.  
@@ -161,7 +161,7 @@ export const horses: Horse[] = [
     status: 'private',
     photo: '/horse-rescue-web/images/lada.jpg',
     heroPhoto: '/horse-rescue-web/images/lada.jpg',
-    //additionalPhotos: ['/horse-rescue-web/images/vavilon-bulan.jpg'],
+    additionalPhotos: [''],
     shortBio: 'Не всі історії можна розповісти',
     rescueStory:
       `Це приватний кінь, який живе на території нашої ферми разом із підопічними фонду.  
@@ -177,7 +177,7 @@ export const horses: Horse[] = [
     status: 'private',
     photo: '/horse-rescue-web/images/bonya.jpg',
     heroPhoto: '/horse-rescue-web/images/bonya.jpg',
-    //additionalPhotos: ['/horse-rescue-web/images/vavilon-bulan.jpg'],
+    additionalPhotos: [''],
     shortBio: 'Не всі історії можна розповісти',
     rescueStory:
       `Це приватний кінь, який живе на території нашої ферми разом із підопічними фонду.  
@@ -193,7 +193,7 @@ export const horses: Horse[] = [
     status: 'private',
     photo: '/horse-rescue-web/images/licar.jpg',
     heroPhoto: '/horse-rescue-web/images/licar.jpg',
-    //additionalPhotos: ['/horse-rescue-web/images/vavilon-bulan.jpg'],
+    additionalPhotos: [''],
     shortBio: 'Не всі історії можна розповісти',
     rescueStory:
       `Це приватний кінь, який живе на території нашої ферми разом із підопічними фонду.  
@@ -238,75 +238,67 @@ export interface Campaign {
 
 export const campaigns: Campaign[] = [
   {
-    id: 'winter-2024',
-    title: 'Winter Care Fund 2024–25',
+    id: 'winter-2026',
+    title: 'Подаруй коням ситу зиму',
     description:
-      'Covering heating, extra feed, and veterinary care for all twelve horses through the winter months. Cold season places significant extra demands on every animal in our care — feed consumption rises by roughly 30%, and senior horses like Kaspar need continuous heated stabling.',
-    target: 8500,
-    raised: 5240,
+      `Зима для коней — це не лише холод, а й місяці, коли їм особливо потрібні тепло, турбота та достатньо якісного корму. Саме тому ми розпочали збір на 80 тонн сіна (це приблизно 20 машин по 4,5–5 тонн кожна)
+
+      Вартість однієї машини сіна разом із доставкою: 34 000 грн.  
+      (20 машин * 34 000 грн = 680 000 грн)
+
+      Дві машини ми вже придбали власним коштом, а зараз збираємо на наступні.
+
+      
+      Ми хочемо, щоб допомога була взаємною.
+      За донат на сіно ти можеш приїхати до нас на ферму та провести час із кіньми. Познайомитися з ними, погладити, погодувати, побути поруч і відчути особливий зв’язок, який виникає між людиною та конем. Домовитися про зустріч можна з засновницею фонду через Instagram 
+
+      Твій внесок - не просто підтримка ферми. Це турбота про тварин і можливість стати частиною їхнього життя.
+      Дякуємо кожному, хто долучається!
+
+',
+    target: 612 000,
+    raised: 32 022,
     status: 'active',
-    startDate: 'October 2024',
-    horses: ['marta', 'bruno', 'luna', 'kaspar', 'bella', 'rex'],
+    startDate: 'Август 2026',
+    horses: ['britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
     reportAvailable: false,
   },
 
   {
-    id: 'rex-emergency',
-    title: 'Rex Emergency Fund',
+    id: 'furioza',
+    title: 'Викуп вагітної кобили з бійні',
     description:
-      'Emergency medical treatment for Rex: surgery, blood transfusion, IV nutrition, and the first month of intensive care following his rescue in August 2024.',
-    target: 3200,
-    raised: 3200,
+      'М'ясник збирався зарізати вагітну кобилу. Засновниця фонду терміново відкрила збір на її викуп. За один день ми зібрали необхідну суму та врятували кобилу',
+    target: 45 000,
+    raised: 51 630,
     status: 'completed',
-    startDate: 'August 2024',
-    endDate: 'September 2024',
-    horses: ['rex'],
+    startDate: '21 Березня 2026',
+    endDate: '21 Березня 2026',
+    horses: ['furioza', 'leksa'],
     reportAvailable: true,
     report: {
       summary:
-        "Rex arrived in critical condition on 14 August 2024. Within 72 hours, the emergency fundraiser had been fully funded by 94 donors from twelve countries. The funds covered his emergency surgery, a six-day ICU stay at the University Veterinary Clinic, and his first month of specialist recovery care at the sanctuary.",
+        "Вагітна кобила з раною на нозі була викуплена в м'ясника в Березні 2026",
       spending: [
-        {
-          category: 'Emergency surgery',
-          amount: 1100,
+      {
+          category: 'Викуп кобили',
+          amount: 45 000,
           description:
-            'Wound debridement and closure under general anaesthesia at University Veterinary Clinic',
+            '',
         },
         {
-          category: 'Blood transfusion & ICU',
-          amount: 780,
+          category: 'Вакцинація',
+          amount: 3 320,
           description:
-            '6-day intensive care unit stay including blood products and IV nutrition',
+            '',
         },
         {
-          category: 'Medication — first month',
-          amount: 340,
+          category: 'Корма',
+          amount: 3 310,
           description:
-            'Antibiotics, anti-inflammatories, pain management',
+            '',
         },
-        {
-          category: 'Specialist diet — first month',
-          amount: 280,
-          description:
-            'Refeeding protocol under veterinary supervision — small, frequent high-nutrition meals',
-        },
-        {
-          category: 'Ongoing monitoring',
-          amount: 420,
-          description:
-            'Bi-weekly vet visits and blood panels through September',
-        },
-        {
-          category: 'Equipment & wound care',
-          amount: 180,
-          description:
-            'Bandages, antiseptic, specialist dressings for daily wound care',
-        },
-        {
-          category: 'Transport',
-          amount: 100,
-          description: 'Horse ambulance for two clinic transfers',
-        },
+       
       ],
       quote:
         "When Rex arrived, we weren't sure he would make it through the first night. The speed at which your donations arrived gave us the freedom to act immediately without hesitation. That's what saved him.",
@@ -379,70 +371,4 @@ export const campaigns: Campaign[] = [
     },
   },
 
-  {
-    id: 'annual-care-2022',
-    title: 'Annual Care Fund 2022',
-    description:
-      'Full-year operational funding: feed, veterinary care, farrier visits, and part-time staff wages for seven horses in our care.',
-    target: 24000,
-    raised: 22800,
-    status: 'completed',
-    startDate: 'January 2022',
-    endDate: 'December 2022',
-    horses: [],
-    reportAvailable: true,
-    report: {
-      summary:
-        'Our first full-year fundraiser covered core operating costs for seven horses throughout 2022. While we fell €1,200 short of target, careful budgeting and two volunteer work weekends kept us fully operational. A detailed financial statement for the full year is available on request.',
-      spending: [
-        {
-          category: 'Feed & forage',
-          amount: 7200,
-          description:
-            'Hay, haylage, hard feed, and supplements for seven horses over twelve months',
-        },
-        {
-          category: 'Veterinary care',
-          amount: 5400,
-          description:
-            'Routine and emergency vet visits, vaccinations, bloodwork, and one emergency procedure (Kaspar)',
-        },
-        {
-          category: 'Farrier visits',
-          amount: 1680,
-          description:
-            'Six-weekly hoof trimming for all horses — specialist farrier for senior horses',
-        },
-        {
-          category: 'Staffing',
-          amount: 6000,
-          description:
-            'Part-time sanctuary manager salary (part-funded from this campaign)',
-        },
-        {
-          category: 'Utilities & maintenance',
-          amount: 1800,
-          description: 'Electricity, water, and routine maintenance',
-        },
-        {
-          category: 'Insurance',
-          amount: 720,
-          description:
-            'Public liability and animal health insurance',
-        },
-      ],
-      quote:
-        'Every euro in this report went directly into the care of our horses. Nothing was spent on administration beyond what you see here.',
-      quoteAuthor: 'Marie Horáčková, Foundation Director',
-      outcomes: [
-        'Seven horses maintained in full health throughout 2022',
-        'Three new rescues successfully integrated',
-        'Zero instances of preventable illness or injury',
-        'Marta fully rehabilitated and moved to thriving status',
-      ],
-      remainingFunds: 0,
-      remainingNote:
-        'The €1,200 shortfall against target was covered by two volunteer work weekends and a private donation from a board member. Full audited financial accounts for 2022 are available as a PDF on request.',
-    },
-  },
 ];
