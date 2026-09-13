@@ -501,7 +501,7 @@ function HelpCard({
   title: string;
   body: string;
   cta: string;
-  onClick: () => void;
+  onClick?: () => void;
   href?: string;
   accent: 'brown' | 'green' | 'sky';
 }) {
@@ -536,12 +536,24 @@ function HelpCard({
         {body}
       </p>
 
-      <button
-        onClick={onClick}
-        className={`self-start text-sm font-semibold border px-4 py-2 rounded-sm transition-colors ${ctaCls}`}
-      >
-        {cta}
-      </button>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`self-start text-sm font-semibold border px-4 py-2 rounded-sm transition-colors ${ctaCls}`}
+        >
+          {cta}
+        </a>
+      ) : (
+        <button
+          type="button"
+          onClick={onClick}
+          className={`self-start text-sm font-semibold border px-4 py-2 rounded-sm transition-colors ${ctaCls}`}
+        >
+          {cta}
+        </button>
+      )}
     </div>
   );
 }
