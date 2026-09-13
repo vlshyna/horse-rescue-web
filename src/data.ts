@@ -297,6 +297,7 @@ export const campaigns: Campaign[] = [
         },
        
       ],
+      
       transactionLinks: [
     {
       title: 'Фото чеків та оплат',
@@ -310,6 +311,6 @@ export const campaigns: Campaign[] = [
       title: 'Транзакції з банківської виписки',
       url: 'https://...',
     },
-  },
+  ],
 
 ];
