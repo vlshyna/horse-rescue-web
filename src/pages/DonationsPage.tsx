@@ -27,7 +27,7 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
         {/* Active campaign */}
         <section className="mb-20 md:mb-28">
-          <p className="text-xs font-semibold tracking-widest uppercase text-green mb-6">{T.donationsPage.activeNow}</p>
+          <p className="text-s font-semibold tracking-widest uppercase text-green mb-6">{T.donationsPage.activeNow}</p>
           <ActiveCampaignCard campaign={active} navigate={navigate} T={T} />
         </section>
 
@@ -36,13 +36,14 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <h2 className="font-serif text-3xl text-charcoal mb-4">{T.donationsPage.howHeading}</h2>
-              <div className="space-y-3 text-sm text-charcoal/65 leading-relaxed">
+              <div className="space-y-3 text-s text-charcoal leading-relaxed">
                 <p>{T.donationsPage.howP1}</p>
                 <p>{T.donationsPage.howP2}</p>
                 <p>{T.donationsPage.howP3}</p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+           
+            {/* <div className="grid grid-cols-2 gap-4">
               {[
                 { num: '4', label: T.donationsPage.campaigns },
                 { num: '100%', label: T.donationsPage.published },
@@ -54,13 +55,14 @@ export default function DonationsPage({ navigate }: DonationsPageProps) {
                   <div className="text-xs text-charcoal/50">{s.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
+            
           </div>
         </section>
 
         {/* Past campaigns */}
         <section>
-          <p className="text-xs font-semibold tracking-widest uppercase text-green mb-3">{T.donationsPage.archiveLabel}</p>
+          <p className="text-s font-semibold tracking-widest uppercase text-green mb-3">{T.donationsPage.archiveLabel}</p>
           <h2 className="font-serif text-4xl text-charcoal mb-8">{T.donationsPage.archiveHeading}</h2>
           <div className="space-y-5">
             {past.map((campaign) => (
@@ -86,23 +88,23 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
               <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
               {T.donationsPage.active}
             </span>
-            <span className="text-xs text-charcoal/40">{campaign.startDate}</span>
+            <span className="text-s text-charcoal">{campaign.startDate}</span>
           </div>
 
           <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">{campaign.title}</h2>
-          <p className="text-charcoal/65 leading-relaxed mb-8 text-sm md:text-base">{campaign.description}</p>
+          <p className="text-charcoal/85 leading-relaxed mb-8 text-sm md:text-base whitespace-pre-line">{campaign.description}</p>
 
           <div className="mb-8">
             <div className="flex justify-between items-baseline mb-2.5">
-              <span className="font-serif text-3xl text-charcoal">€{campaign.raised.toLocaleString()}</span>
-              <span className="text-sm text-charcoal/45">{T.donationsPage.active !== 'Active' ? 'мета' : 'of'} €{campaign.target.toLocaleString()}</span>
+              <span className="font-serif text-3xl text-charcoal">₴{campaign.raised.toLocaleString()}</span>
+              <span className="text-sm text-charcoal/45">{T.donationsPage.active !== 'Active' ? 'мета' : 'of'} ₴{campaign.target.toLocaleString()}</span>
             </div>
             <div className="h-2.5 bg-cream-dark rounded-full overflow-hidden">
               <div className="h-full bg-brown rounded-full transition-all duration-700" style={{ width: `${pct}%` }} />
             </div>
             <div className="flex justify-between mt-2 text-xs text-charcoal/40">
               <span>{pct}% {T.donationsPage.funded}</span>
-              <span>€{remaining.toLocaleString()} {T.campaign.stillNeeded}</span>
+              <span>₴{remaining.toLocaleString()} {T.campaign.stillNeeded}</span>
             </div>
           </div>
 
@@ -136,19 +138,19 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
 
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/35 mb-3">{T.donationsPage.bankTransfer}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/75 mb-3">{T.donationsPage.bankTransfer}</p>
             <div className="space-y-1.5 text-sm">
               <div>
-                <span className="text-charcoal/40 text-xs">{T.donationsPage.accountName}</span>
-                <p className="text-charcoal/75 font-medium">Free Horses z.s.</p>
+                <span className="text-charcoal/75 text-xs">{T.donationsPage.accountName}</span>
+                <p className="text-charcoal font-medium">БО БФ "ФРІ ХОРСЕС"</p>
               </div>
               <div>
-                <span className="text-charcoal/40 text-xs">{T.donationsPage.iban}</span>
-                <p className="font-mono text-charcoal/75">CZ65 0800 0000 1920 0014 5399</p>
+                <span className="text-charcoal/75 text-xs">{T.donationsPage.iban}</span>
+                <p className="font-mono text-charcoal">UA943220010000026046700014214</p>
               </div>
               <div>
-                <span className="text-charcoal/40 text-xs">{T.donationsPage.reference}</span>
-                <p className="font-mono text-charcoal/75">WINTER-2024</p>
+                <span className="text-charcoal/75 text-xs">{T.donationsPage.reference}</span>
+                <p className="font-mono text-charcoal">На сіно для коней</p>
               </div>
             </div>
           </div>
@@ -167,17 +169,17 @@ function PastCampaignRow({ campaign, navigate, T }: { campaign: Campaign; naviga
       <div className="grid md:grid-cols-4 gap-5 md:gap-8 items-start">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-2">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-cream-dark text-charcoal/50 px-2 py-0.5 rounded-sm">
+            <span className="inline-flex items-center gap-1.5 text-s font-semibold bg-cream-dark text-charcoal/50 px-2 py-0.5 rounded-sm">
               {T.donationsPage.completed}
             </span>
             {campaign.startDate && (
-              <span className="text-xs text-charcoal/35">
+              <span className="text-s text-charcoal/35">
                 {campaign.startDate}{campaign.endDate ? ` – ${campaign.endDate}` : ''}
               </span>
             )}
           </div>
           <h3 className="font-serif text-2xl text-charcoal mb-2">{campaign.title}</h3>
-          <p className="text-sm text-charcoal/55 leading-relaxed line-clamp-2">{campaign.description}</p>
+          <p className="text-sm text-charcoal/75 leading-relaxed whitespace-pre-line">{campaign.description}</p>
         </div>
 
         <div className="md:col-span-1">
@@ -190,8 +192,8 @@ function PastCampaignRow({ campaign, navigate, T }: { campaign: Campaign; naviga
           <div className="h-1.5 bg-cream-dark rounded-full overflow-hidden">
             <div className={`h-full rounded-full ${exceeded ? 'bg-green' : 'bg-brown'}`} style={{ width: `${Math.min(100, pct)}%` }} />
           </div>
-          <div className="mt-1 text-xs text-charcoal/35">
-            {exceeded ? `+€${(campaign.raised - campaign.target).toLocaleString()} ${T.donationsPage.overTarget}` : `${pct}% ${T.donationsPage.funded}`}
+          <div className="mt-1 text-s text-charcoal/35">
+            {exceeded ? `+₴${(campaign.raised - campaign.target).toLocaleString()} ${T.donationsPage.overTarget}` : `${pct}% ${T.donationsPage.funded}`}
           </div>
         </div>
 
@@ -207,7 +209,7 @@ function PastCampaignRow({ campaign, navigate, T }: { campaign: Campaign; naviga
               </svg>
             </button>
           ) : (
-            <span className="text-xs text-charcoal/35 italic">{T.donationsPage.reportPending}</span>
+            <span className="text-s text-charcoal/35 italic">{T.donationsPage.reportPending}</span>
           )}
         </div>
       </div>
