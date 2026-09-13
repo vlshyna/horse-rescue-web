@@ -74,7 +74,7 @@ export default function Footer({ navigate }: FooterProps) {
         </div>
 
         <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-cream/30">
-          <div>© 2026 Free Horses Foundation. {T.footer.registered}</div>
+          <div>© 2026 Free Horses Foundation.</div>
           <div>Код ЄДРПОУ: 45984930</div>
         </div>
       </div>
