@@ -67,7 +67,7 @@ export default function HomePage({
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-end bg-charcoal">
         <img
-          src="/horse-rescue-web/images/bg.jpg"
+          src="/horse-rescue-web/images/bg2.jpg"
           alt="A horse grazing in a golden-light meadow at dusk"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           loading="eager"
@@ -81,7 +81,7 @@ export default function HomePage({
               {T.hero.label}
             </p>
 
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-cream leading-[1.06] mb-6">
+            <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-cream leading-[1.06] mb-6">
               {T.hero.headline1}
               <br />
               {T.hero.headline2}
@@ -104,7 +104,7 @@ export default function HomePage({
               </button>
 
               <button
-                onClick={() => navigate('donations')}
+                onClick={() => navigate('home', undefined, 'help'}
                 className="border border-cream/40 text-cream text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream/10 transition-colors"
               >
                 {T.hero.support}
@@ -114,72 +114,26 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-charcoal text-cream">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-cream/10">
-            {[
-              {
-                value: '47',
-                label: T.stats.rescued,
-                sub: T.stats.since,
-              },
-              {
-                value: '12',
-                label: T.stats.inCare,
-                sub: T.stats.inCareAt,
-              },
-              {
-                value: '31',
-                label: T.stats.rehomed,
-                sub: T.stats.rehomedTo,
-              },
-              {
-                value: '94%',
-                label: T.stats.recovery,
-                sub: T.stats.recoveryOf,
-              },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="md:px-10 first:pl-0 last:pr-0"
-              >
-                <div className="font-serif text-4xl md:text-5xl text-cream mb-1">
-                  {stat.value}
-                </div>
-
-                <div className="text-sm font-semibold text-cream/80">
-                  {stat.label}
-                </div>
-
-                <div className="text-xs text-cream/35 mt-0.5">
-                  {stat.sub}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+     
       {/* Mission */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-green mb-4">
+            <p className="text-sm font-semibold tracking-widest uppercase text-green mb-4">
               {T.mission.label}
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-tight mb-6">
+            <h2 className="font-bold text-2xl md:text-3xl text-charcoal leading-tight mb-6">
               {T.mission.headline}
             </h2>
 
-            <div className="space-y-4 text-charcoal/70 leading-relaxed">
+            <div className="text-base space-y-4 text-charcoal/85 leading-relaxed">
               <p>{T.mission.p1}</p>
               <p>{T.mission.p2}</p>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative w-full max-w-[300px]">
             <div className="aspect-[4/5] bg-cream-dark rounded overflow-hidden">
               <img
                 src="/horse-rescue-web/images/Liza.jpg"
@@ -190,13 +144,13 @@ export default function HomePage({
             </div>
 
             <div className="absolute -bottom-5 -left-5 bg-green text-cream px-5 py-4 rounded-sm hidden md:block">
-              <div className="font-serif text-2xl">
+              <div className="font text-xl">
                 {T.mission.years}
               </div>
 
-              <div className="text-xs text-cream/70 mt-0.5">
+              {/* <div className="text-xs text-cream/70 mt-0.5">
                 {T.mission.yearsOf}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -251,7 +205,7 @@ export default function HomePage({
               {T.help.heading}
             </h2>
 
-            <p className="text-charcoal/60 leading-relaxed">
+            <p className="text-charcoal/85 leading-relaxed">
               {T.help.sub}
             </p>
           </div>
@@ -626,11 +580,11 @@ function HelpCard({
 
   const ctaCls = {
     brown:
-      'border-brown/30 text-brown hover:bg-brown hover:text-cream',
+      'bg-brown border-brown text-cream hover:bg-brown-hover',
     green:
-      'border-green/30 text-green hover:bg-green hover:text-cream',
+      'bg-green border-green text-cream hover:bg-green/90',
     sky:
-      'border-sky/40 text-sky hover:bg-sky hover:text-charcoal',
+      'bg-sky border-sky text-charcoal hover:bg-sky/90',
   }[accent];
 
   return (
