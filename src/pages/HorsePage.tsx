@@ -48,7 +48,7 @@ export default function HorsePage({
     return (
       <div className="min-h-screen flex items-center justify-center pt-16">
         <div className="text-center">
-          <p className="font-serif text-3xl text-charcoal mb-3">
+          <p className="font-bold text-3xl text-charcoal mb-3">
             Horse not found
           </p>
 
@@ -142,16 +142,16 @@ export default function HorsePage({
               />
             </div>
 
-            {/* Short bio */}
-            <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-4">
+            
+            {/* <div>
+              <h2 className="font text-3xl text-charcoal mb-4">
                 {horse.shortBio}
               </h2>
-            </div>
+            </div> */}
 
             {/* Rescue story */}
             <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-5">
+              <h2 className="font-bold text-2xl text-charcoal mb-5">
                 {T.horsePage.rescueStory}
               </h2>
 
@@ -171,7 +171,7 @@ export default function HorsePage({
 
             {/* Additional photos */}
             <div>
-              <h2 className="font-serif text-3xl text-charcoal mb-5">
+              <h2 className="font-bold text-2xl text-charcoal mb-5">
                 Додаткові фото
               </h2>
 
@@ -214,7 +214,7 @@ export default function HorsePage({
                 Про коня
               </p>
 
-              <p className="text-charcoal font-serif text-xl">
+              <p className="text-charcoal font-bold text-xl">
                 {horse.name}
               </p>
 
