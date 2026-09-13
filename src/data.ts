@@ -255,7 +255,7 @@ export const campaigns: Campaign[] = [
     target: 612000,
     raised: 32022,
     status: 'active',
-    startDate: 'Август 2026',
+    startDate: 'Серпень 2026',
     horses: ['britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
     reportAvailable: false,
   },
@@ -269,7 +269,7 @@ export const campaigns: Campaign[] = [
     raised: 51630,
     status: 'completed',
     startDate: '21 Березня 2026',
-    endDate: '21 Березня 2026',
+    endDate: ' ',
     horses: ['furioza', 'leksa'],
     reportAvailable: true,
     report: {
@@ -299,17 +299,14 @@ export const campaigns: Campaign[] = [
       
       transactionLinks: [
           {
-            title: 'Фото чеків та оплат',
-            url: 'https://...',
-          },
-          {
             title: 'Підтвердження оплати корму',
-            url: 'https://...',
+            url: '/horse-rescue-web/images/food.jpg',
           },
           {
-            title: 'Транзакції з банківської виписки',
-            url: 'https://...',
+            title: 'Підтвердження оплати вакцинації',
+            url: '/horse-rescue-web/images/vakcina.jpg',
           },
+          
         ],
   },},
 ];
