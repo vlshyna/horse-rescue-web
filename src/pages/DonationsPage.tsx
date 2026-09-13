@@ -121,8 +121,8 @@ function ActiveCampaignCard({ campaign, navigate, T }: { campaign: Campaign; nav
           </div>
         </div>
 
-        {/* <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
-          <div>
+        <div className="md:col-span-2 bg-cream-dark border-t md:border-t-0 md:border-l border-charcoal/8 p-7 md:p-10 flex flex-col justify-between gap-8">
+        {/*   <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/35 mb-4">{T.donationsPage.horsesIn}</p>
             <div className="flex flex-wrap gap-2">
               {(campaign.horses || []).map((id) => (
