@@ -168,7 +168,7 @@ export default function HomePage({
                 {T.horses.label}
               </p>
 
-              <h2 className="font-serif text-4xl md:text-5xl text-charcoal">
+              <h2 className="font-bold text-4xl md:text-5xl text-charcoal">
                 {T.horses.heading}
               </h2>
             </div>
@@ -201,7 +201,7 @@ export default function HomePage({
               {T.help.label}
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-4">
+            <h2 className="font-bold text-4xl md:text-5xl text-charcoal mb-4">
               {T.help.heading}
             </h2>
 
