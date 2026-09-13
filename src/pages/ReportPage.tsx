@@ -49,10 +49,10 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
             <span>{campaign.startDate}{campaign.endDate ? ` – ${campaign.endDate}` : ''}</span>
             <span>·</span>
             <span>
-              {T.reportPage.raised}: €{campaign.raised.toLocaleString()}{' '}
+              {T.reportPage.raised}: ₴{campaign.raised.toLocaleString()}{' '}
               {exceeded
-                ? <span className="text-green-light">({T.reportPage.exceededBy} €{(campaign.raised - campaign.target).toLocaleString()})</span>
-                : <span>({T.reportPage.of} €{campaign.target.toLocaleString()} {T.reportPage.target})</span>
+                ? <span className="text-green-light">({T.reportPage.exceededBy} ₴{(campaign.raised - campaign.target).toLocaleString()})</span>
+                : <span>({T.reportPage.of} ₴{campaign.target.toLocaleString()} {T.reportPage.target})</span>
               }
             </span>
           </div>
@@ -103,8 +103,8 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
             })}
           </div>
 
-          {/* Table */}
-          <div className="border border-charcoal/10 rounded-sm overflow-hidden">
+          
+          {/* <div className="border border-charcoal/10 rounded-sm overflow-hidden">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-cream-dark border-b border-charcoal/10">
@@ -127,46 +127,12 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
                   <td className="px-5 py-3.5 text-right text-charcoal/40 hidden md:table-cell">100%</td>
                 </tr>
               </tbody>
-            </table>
+            </table> */}
           </div>
         </section>
 
-        {/* Quote */}
-        <section className="mb-14">
-          <blockquote className="border-l-2 border-brown pl-7 py-2">
-            <p className="font-serif text-2xl md:text-3xl text-charcoal leading-snug mb-4">"{report.quote}"</p>
-            <footer className="text-sm text-charcoal/50">— {report.quoteAuthor}</footer>
-          </blockquote>
-        </section>
-
-        {/* Outcomes */}
-        <section className="mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-green mb-4">{T.reportPage.outcomesLabel}</p>
-          <h2 className="font-serif text-3xl text-charcoal mb-6">{T.reportPage.outcomesHeading}</h2>
-          <ul className="space-y-3">
-            {report.outcomes.map((outcome) => (
-              <li key={outcome} className="flex items-start gap-3">
-                <span className="mt-1.5 w-5 h-5 rounded-sm bg-green/15 text-green flex items-center justify-center shrink-0">
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="2 6 5 9 10 3" />
-                  </svg>
-                </span>
-                <span className="text-charcoal/75 leading-relaxed">{outcome}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
 
         {/* Remaining funds */}
-        <section className="bg-cream-dark border border-charcoal/8 rounded-sm p-6 md:p-8 mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40 mb-3">{T.reportPage.remainingLabel}</p>
-          <div className="flex items-baseline gap-3 mb-3">
-            <span className="font-serif text-4xl text-charcoal">€{report.remainingFunds.toLocaleString()}</span>
-            <span className="text-sm text-charcoal/45">{T.reportPage.remainingUnspent}</span>
-          </div>
-          <p className="text-sm text-charcoal/65 leading-relaxed">{report.remainingNote}</p>
-        </section>
-
         <div className="pt-4 border-t border-charcoal/10 flex items-center justify-between gap-4 flex-wrap">
           <button
             onClick={() => navigate('donations')}
@@ -183,6 +149,6 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
           </p>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
