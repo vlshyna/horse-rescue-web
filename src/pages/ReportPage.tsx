@@ -189,10 +189,10 @@ export default function ReportPage({ reportId, navigate }: ReportPageProps) {
             </svg>
             {T.reportPage.backLink}
           </button>
-          <p className="text-xs text-charcoal/35">
+          {/* <p className="text-xs text-charcoal/35">
             {T.reportPage.questions}{' '}
             <a href="mailto:info@freehorses.org" className="text-brown hover:underline">info@freehorses.org</a>
-          </p>
+          </p> */}
         </div>
       </div>
      </div>
