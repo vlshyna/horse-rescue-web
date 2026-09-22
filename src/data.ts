@@ -32,6 +32,19 @@ export const horses: Horse[] = [
 Останні дні свого життя Бойова провела біля людей, які про неї піклувалися та дійсно любили. Ця історія залишиться не лише шрамом на наших серцях, але й важливим нагадуванням про те, навіщо і чому ми продовжуємо нашу справу.`,
   },
 
+   {
+    id: 'kalibri',
+    name: 'Калібрі',
+    age: 'Рік народження: 2026',
+    status: 'fund',
+    photo: '/horse-rescue-web/images/kalibri.jpg',
+    heroPhoto: '/horse-rescue-web/images/kalibri.jpg',
+    additionalPhotos: ['/horse-rescue-web/images/kalibri2.jpg'],
+    shortBio: 'Лоша Брітні',
+    rescueStory:
+      `Народилася на нашій фермі :)`,
+  },
+
   {
     id: 'britni',
     name: 'Брітні',
