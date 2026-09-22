@@ -258,6 +258,8 @@ export interface Campaign {
 }
 
 export const campaigns: Campaign[] = [
+
+  
   {
     id: 'winter-2026',
     title: 'Подаруй коням ситу зиму',
@@ -285,6 +287,8 @@ export const campaigns: Campaign[] = [
     reportAvailable: false,
   },
 
+
+  
  {
     id: 'winter-2026-01',
     title: 'Купівля сіна для коней',
@@ -315,8 +319,9 @@ export const campaigns: Campaign[] = [
             url: '/horse-rescue-web/images/cino.jpg',
           },   
         ],
-  },
-  
+  },},
+
+   
   {
     id: 'furioza',
     title: 'Викуп вагітної кобили з бійні',
