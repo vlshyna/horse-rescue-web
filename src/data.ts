@@ -266,8 +266,11 @@ export const campaigns: Campaign[] = [
       
       Вартість однієї машини сіна разом із доставкою: 34 000 грн.  
       (20 машин * 34 000 грн = 680 000 грн)
-      
       Дві машини ми вже придбали власним коштом, а зараз збираємо на наступні.
+
+      Прогрес:
+      - Серпень 2026: 2 машини придбали власним коштом
+      - 16 Вересня 2026: назбирали на третю машину, зробили часкове зняття з банки та замовили сіно. Звіт доданий до архіву
       
       Ми хочемо, щоб допомога була взаємною.  
       За донат на сіно ти можеш приїхати до нас на ферму та провести час із кіньми. Познайомитися з ними, погладити, погодувати, побути поруч і відчути особливий зв’язок, який виникає між людиною та конем. Домовитися про зустріч можна з засновницею фонду через Instagram 
@@ -275,13 +278,43 @@ export const campaigns: Campaign[] = [
       Твій внесок - не просто підтримка ферми. Це турбота про тварин і можливість стати частиною їхнього життя.
       Дякуємо кожному, хто долучається!`,
     target: 612000,
-    raised: 32022,
+    raised: 47012,
     status: 'active',
     startDate: 'Серпень 2026',
-    horses: ['britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
+    horses: ['kalibri', 'britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
     reportAvailable: false,
   },
 
+ {
+    id: 'winter-2026-01',
+    title: 'Купівля сіна для коней',
+    description:
+      `Перший звіт великого збору (Подаруй коням ситу зиму)`,
+    target: 34000,
+    raised: 34000,
+    status: 'completed',
+    startDate: 'Серпень 2026',
+    endDate: '16 Вересня 2026',
+    horses: ['kalibri', 'britni', 'bagira', 'furioza', 'leksa', 'vavilon', 'bulan', 'djo', 'lada', 'sparta', 'licar', 'bonya'],
+    reportAvailable: true,
+    report: {
+      summary:
+        "Замовили одну машину сіна разом із доставкою",
+      spending: [
+      {
+          category: 'Купівля сіна та доставка',
+          amount: 34000,
+          description:
+            '',
+        },
+      ],
+      
+      transactionLinks: [
+          {
+            title: 'Підтвердження часткового зняття з банки',
+            url: '/horse-rescue-web/images/cino.jpg',
+          },
+  
   {
     id: 'furioza',
     title: 'Викуп вагітної кобили з бійні',
