@@ -313,7 +313,9 @@ export const campaigns: Campaign[] = [
           {
             title: 'Підтвердження часткового зняття з банки',
             url: '/horse-rescue-web/images/cino.jpg',
-          },
+          },   
+        ],
+  },
   
   {
     id: 'furioza',
